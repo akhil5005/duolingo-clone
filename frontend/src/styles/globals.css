@@ -11,7 +11,9 @@
   --muted: 119 119 119;
   --line: 229 229 229;
   --correct: 215 255 184;
+  --correct-ink: 88 167 0;
   --wrong: 255 223 224;
+  --wrong-ink: 234 43 43;
   --locked: 229 229 229;
   --locked-ink: 175 175 175;
 }
@@ -23,8 +25,12 @@
   --ink: 241 247 251;
   --muted: 141 155 163;
   --line: 55 70 79;
+  /* Dark mode has one card colour for both verdicts, so the icon and text
+     carry the meaning instead of the background. */
   --correct: 32 47 54;
-  --wrong: 32 47 54;
+  --correct-ink: 137 226 25;
+  --wrong: 48 34 38;
+  --wrong-ink: 255 107 107;
   --locked: 55 70 79;
   --locked-ink: 141 155 163;
 }

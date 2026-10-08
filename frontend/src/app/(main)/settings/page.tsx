@@ -10,6 +10,7 @@ import { Card } from "@/components/ui/Card";
 import { Skeleton } from "@/components/ui/Skeleton";
 import { Toggle } from "@/components/ui/Toggle";
 import { useMe, useUpdateMe } from "@/hooks/useMe";
+import { useThemeMode } from "@/hooks/useThemeMode";
 
 function Section({ title, children }: { title: string; children: React.ReactNode }) {
   return (
@@ -23,6 +24,7 @@ function Section({ title, children }: { title: string; children: React.ReactNode
 export default function SettingsPage() {
   const { data: me, isPending } = useMe();
   const update = useUpdateMe();
+  const theme = useThemeMode();
   const [displayName, setDisplayName] = useState("");
 
   // Seed the input once the learner arrives, then leave it to the user.
@@ -53,6 +55,13 @@ export default function SettingsPage() {
             disabled={update.isPending}
             label="Sound effects"
             onChange={(sound_enabled) => update.mutate({ sound_enabled })}
+          />
+        </SettingsRow>
+        <SettingsRow title="Dark mode" description="Easier on the eyes at night">
+          <Toggle
+            checked={theme.mode === "dark"}
+            label="Dark mode"
+            onChange={(dark) => theme.setMode(dark ? "dark" : "light")}
           />
         </SettingsRow>
         <ComingSoonRow title="Notifications" />

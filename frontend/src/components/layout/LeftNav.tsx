@@ -25,6 +25,7 @@ export function LeftNav() {
           <Link
             key={href}
             href={href}
+            aria-label={label}
             aria-current={active ? "page" : undefined}
             className={clsx(
               "flex items-center gap-4 rounded-xl border-2 px-3 py-3 text-sm uppercase tracking-wide transition",

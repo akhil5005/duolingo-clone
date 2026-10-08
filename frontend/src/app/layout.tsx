@@ -3,6 +3,7 @@ import { Nunito } from "next/font/google";
 import type { ReactNode } from "react";
 
 import { Providers } from "@/app/providers";
+import { THEME_INIT_SCRIPT } from "@/lib/theme-mode";
 import "@/styles/globals.css";
 
 // Nunito is a free rounded-bold family; it stands in for Duolingo's own
@@ -22,7 +23,11 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="en" className={nunito.variable}>
+    <html lang="en" className={nunito.variable} suppressHydrationWarning>
+      <head>
+        {/* Applies the saved theme before the first paint; see lib/theme-mode. */}
+        <script dangerouslySetInnerHTML={{ __html: THEME_INIT_SCRIPT }} />
+      </head>
       <body>
         <Providers>{children}</Providers>
       </body>

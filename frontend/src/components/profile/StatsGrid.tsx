@@ -14,7 +14,7 @@ function Stat({ icon, value, label }: StatProps) {
         {icon}
       </span>
       <div className="min-w-0">
-        <p className="text-lg">{value}</p>
+        <p className="text-base leading-tight sm:text-lg">{value}</p>
         <p className="truncate text-xs font-semibold text-muted">{label}</p>
       </div>
     </Card>

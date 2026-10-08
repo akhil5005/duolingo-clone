@@ -15,6 +15,7 @@ import { FeedbackFooter } from "@/components/lesson/FeedbackFooter";
 import { LessonHeader } from "@/components/lesson/LessonHeader";
 import { OutOfHeartsModal } from "@/components/lesson/modals/OutOfHeartsModal";
 import { QuitModal } from "@/components/lesson/modals/QuitModal";
+import { SpeakerButton } from "@/components/lesson/SpeakerButton";
 import { Mascot } from "@/components/mascot/Mascot";
 import { useToast } from "@/components/ui/Toast";
 import { useKeyPress } from "@/hooks/useKeyboard";
@@ -42,6 +43,9 @@ function PromptBubble({ exercise }: { exercise: PublicExercise }) {
         {exercise.payload.source_text}
         <span className="absolute -left-[9px] bottom-4 h-3.5 w-3.5 rotate-45 border-b-2 border-l-2 border-line bg-surface" />
       </p>
+      {exercise.tts_text && exercise.tts_lang && (
+        <SpeakerButton text={exercise.tts_text} lang={exercise.tts_lang} />
+      )}
     </div>
   );
 }

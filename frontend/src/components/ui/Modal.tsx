@@ -32,7 +32,7 @@ export function Modal({ open, onClose, dismissible = true, label, children }: Mo
           role="dialog"
           aria-modal="true"
           aria-label={label}
-          className="fixed inset-0 z-50 flex items-center justify-center bg-ink/40 p-4 backdrop-blur-sm"
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4 backdrop-blur-sm"
         >
           <motion.div
             initial={{ scale: 0.92, y: 12 }}

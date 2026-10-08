@@ -50,8 +50,8 @@ export function FeedbackFooter({
         "sticky bottom-0 min-h-[96px] border-t-2",
         feedback
           ? correct
-            ? "border-brand/25 bg-correct"
-            : "border-danger/25 bg-wrong"
+            ? "border-correct-ink/25 bg-correct"
+            : "border-wrong-ink/25 bg-wrong"
           : "border-line bg-surface",
       )}
     >
@@ -75,13 +75,13 @@ export function FeedbackFooter({
           </span>
 
           <div className="min-w-0 flex-1">
-            <p className={clsx("text-lg", correct ? "text-brand-dark" : "text-danger-dark")}>
+            <p className={clsx("text-lg", correct ? "text-correct-ink" : "text-wrong-ink")}>
               {correct ? praiseFor(feedback) : "Correct solution:"}
             </p>
             <p
               className={clsx(
                 "text-sm font-semibold",
-                correct ? "text-brand-dark" : "text-danger-dark",
+                correct ? "text-correct-ink" : "text-wrong-ink",
               )}
             >
               {correct ? feedback.note : feedback.correct_answer}
