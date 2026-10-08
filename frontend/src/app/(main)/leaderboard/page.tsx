@@ -1,11 +1,5 @@
-import { Mascot } from "@/components/mascot/Mascot";
+import { ComingSoon } from "@/components/ui/ComingSoon";
 
 export default function LeaderboardPage() {
-  return (
-    <div className="flex flex-col items-center gap-4 py-16 text-center">
-      <Mascot expression="thinking" size={120} />
-      <h1 className="text-2xl">Leaderboard</h1>
-      <p className="max-w-xs text-sm text-muted">This screen is on its way.</p>
-    </div>
-  );
+  return <ComingSoon title="Leaderboard" description="Weekly leagues with your seeded rivals are coming in the next pass." />;
 }

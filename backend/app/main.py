@@ -6,7 +6,7 @@ from contextlib import asynccontextmanager
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from app.api.routes import me, path
+from app.api.routes import leaderboard, me, path
 from app.core import clock
 from app.core.config import get_settings
 from app.core.database import Base, SessionLocal, engine
@@ -56,6 +56,7 @@ def create_app() -> FastAPI:
     register_error_handlers(app)
     app.include_router(me.router)
     app.include_router(path.router)
+    app.include_router(leaderboard.router)
 
     @app.get("/health", tags=["meta"])
     def health() -> dict[str, str]:

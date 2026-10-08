@@ -1,10 +1,12 @@
 """Assembling the current learner's header state."""
 
+from datetime import timedelta
+
 from sqlalchemy.orm import Session
 
 from app.core import clock
 from app.models.user import MAX_HEARTS, User
-from app.repositories import content_repo
+from app.repositories import content_repo, xp_repo
 from app.schemas.me import CourseBrief, MeOut, MeUpdate
 from app.services import hearts_service, streak_service, xp_service
 
@@ -17,6 +19,9 @@ def build(db: Session, user: User) -> MeOut:
     """
     hearts_service.apply_regen(user)
     streak = streak_service.effective_streak(user)
+
+    monday = clock.start_of_week()
+    active_days = xp_repo.active_days(db, user.id, monday, monday + timedelta(days=6))
 
     course = content_repo.get_course(db, user.current_course_id)
     return MeOut(
@@ -35,6 +40,7 @@ def build(db: Session, user: User) -> MeOut:
         last_active_date=user.last_active_date,
         today_xp=xp_service.today_xp(db, user.id),
         daily_goal_xp=user.daily_goal_xp,
+        week_activity=streak_service.week_activity(active_days, monday),
         sound_enabled=user.sound_enabled,
         course=(
             CourseBrief(

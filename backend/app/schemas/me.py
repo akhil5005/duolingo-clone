@@ -30,6 +30,8 @@ class MeOut(BaseModel):
     last_active_date: date | None
     today_xp: int
     daily_goal_xp: int
+    # Monday-to-Sunday activity flags for the streak calendar popover.
+    week_activity: list[bool]
     sound_enabled: bool
     course: CourseBrief | None
 

@@ -22,6 +22,7 @@ export interface Me {
   last_active_date: string | null;
   today_xp: number;
   daily_goal_xp: number;
+  week_activity: boolean[];
   sound_enabled: boolean;
   course: CourseBrief | null;
 }
@@ -59,4 +60,25 @@ export interface PathUnit {
 export interface LearningPath {
   course: CourseBrief;
   units: PathUnit[];
+}
+
+export type LeagueZone = "promotion" | "demotion" | "none";
+
+export interface LeaderboardRow {
+  rank: number;
+  user_id: number;
+  display_name: string;
+  avatar_color: string;
+  xp: number;
+  is_me: boolean;
+  zone: LeagueZone;
+}
+
+export interface Leaderboard {
+  league_name: string;
+  days_left: number;
+  my_rank: number | null;
+  promotion_cutoff: number;
+  demotion_cutoff: number;
+  rows: LeaderboardRow[];
 }
