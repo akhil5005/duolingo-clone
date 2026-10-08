@@ -59,7 +59,7 @@ cd frontend && npm run lint && npm run build
 | Key                   | Default                      | Purpose                                                        |
 | --------------------- | ---------------------------- | -------------------------------------------------------------- |
 | `DATABASE_URL`        | `sqlite:///./duolingo.db`    | SQLAlchemy URL                                                  |
-| `CORS_ORIGINS`        | `http://localhost:3000`      | Comma-separated allowed origins (trailing slashes are stripped) |
+| `CORS_ORIGINS`        | `http://localhost:3000,http://127.0.0.1:3000` | Comma-separated allowed origins (trailing slashes are stripped) |
 | `CORS_ORIGIN_REGEX`   | `https://.*\.vercel\.app`    | Also allows Vercel preview deployments                          |
 | `APP_TIMEZONE`        | `Asia/Kolkata`               | Timezone every date rule (streak, daily goal, league) uses      |
 | `HEART_REGEN_MINUTES` | `60`                         | Minutes per regenerated heart                                   |
@@ -69,9 +69,13 @@ cd frontend && npm run lint && npm run build
 
 | Key                   | Default                 | Purpose                                      |
 | --------------------- | ----------------------- | -------------------------------------------- |
-| `NEXT_PUBLIC_API_URL` | `http://localhost:8000` | Backend base URL, no trailing slash          |
+| `NEXT_PUBLIC_API_URL` | `http://127.0.0.1:8000` | Backend base URL, no trailing slash          |
 
 `NEXT_PUBLIC_*` values are inlined at build time, so changing one on Vercel requires a redeploy.
+
+The local API URL uses the IPv4 literal rather than `localhost` on purpose: Chrome resolves
+`localhost` to `::1` first, while uvicorn binds IPv4 only, which makes browser requests fail
+even though `curl` succeeds.
 
 ## GitHub
 
@@ -160,6 +164,7 @@ Vercel → **Add New** → **Project** → import the same repository.
 | Vercel build fails fetching data          | Server component fetching at build    | All fetching is client-side; keep it that way      |
 | Vercel: "No Next.js version detected"     | Root Directory not `frontend`         | Fix the Root Directory                            |
 | Streak does not move after "Simulate next day" | Code bypassed the clock          | Use `app/core/clock.py` everywhere                |
+| Local: browser shows "Failed to fetch", `curl` works | Chrome resolves `localhost` to `::1`, uvicorn binds IPv4 | Use `http://127.0.0.1:8000` in `NEXT_PUBLIC_API_URL` |
 
 ## AI usage
 

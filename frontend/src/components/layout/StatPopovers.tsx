@@ -5,6 +5,7 @@ import { Heart } from "lucide-react";
 import Link from "next/link";
 
 import { Button3D } from "@/components/ui/Button3D";
+import { Flag } from "@/components/ui/Flag";
 import { useRefillHearts } from "@/hooks/useMe";
 import { useCountdown } from "@/hooks/useCountdown";
 import { formatCountdown, WEEKDAY_INITIALS } from "@/lib/format";
@@ -17,9 +18,11 @@ export function CoursePopover({ me }: { me: Me }) {
     <div className="space-y-3 text-left">
       <p className="text-xs uppercase tracking-widest text-muted">My courses</p>
       <div className="flex items-center gap-3 rounded-xl border-2 border-info/40 bg-info/10 px-3 py-2">
-        <span className="text-2xl" aria-hidden>
-          {me.course?.flag_emoji}
-        </span>
+        <Flag
+          code={me.course?.language_code ?? ""}
+          fallback={me.course?.flag_emoji}
+          className="h-6 w-9"
+        />
         <span className="text-sm">{me.course?.title}</span>
       </div>
       <p className="text-xs font-semibold text-muted">More languages are coming soon.</p>

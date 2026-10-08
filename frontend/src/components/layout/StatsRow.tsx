@@ -8,6 +8,7 @@ import {
   HeartsPopover,
   StreakPopover,
 } from "@/components/layout/StatPopovers";
+import { Flag } from "@/components/ui/Flag";
 import { Popover } from "@/components/ui/Popover";
 import { StatPill } from "@/components/ui/StatPill";
 import { Skeleton } from "@/components/ui/Skeleton";
@@ -34,7 +35,7 @@ export function StatsRow({ align = "center" }: { align?: "center" | "right" }) {
     <div className="flex items-center justify-between gap-1">
       <div className="relative">
         <StatPill
-          icon={me.course?.flag_emoji ?? "\u{1F30D}"}
+          icon={<Flag code={me.course?.language_code ?? ""} fallback={me.course?.flag_emoji} />}
           value={null}
           label={`Course: ${me.course?.title ?? "none"}`}
           onClick={() => toggle("course")}

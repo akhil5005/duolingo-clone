@@ -22,10 +22,11 @@ export function UnitBanner({ unit }: { unit: PathUnit }) {
 
       <Link
         href="/guidebook"
+        aria-label="Open the unit guidebook"
         className="flex shrink-0 items-center gap-2 rounded-xl border-2 border-white/60 px-3 py-2 text-[11px] uppercase tracking-wide transition hover:bg-white/15"
       >
         <BookOpen size={16} strokeWidth={3} aria-hidden />
-        Guidebook
+        <span className="hidden sm:inline">Guidebook</span>
       </Link>
     </div>
   );

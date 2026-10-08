@@ -8,7 +8,7 @@
  * sleeping instance is the one that gets dropped.
  */
 
-const BASE_URL = (process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:8000").replace(/\/$/, "");
+const BASE_URL = (process.env.NEXT_PUBLIC_API_URL ?? "http://127.0.0.1:8000").replace(/\/$/, "");
 const SLOW_REQUEST_MS = 3000;
 
 export class ApiError extends Error {

@@ -22,8 +22,9 @@ interface PositionedSkill {
 
 function StartBubble() {
   return (
-    <div className="pointer-events-none absolute -top-[52px] left-1/2 -translate-x-1/2 animate-bubble-bounce">
-      <div className="relative rounded-2xl border-2 border-line bg-surface px-4 py-2 text-xs uppercase tracking-wider text-brand">
+    // The bounce animates `transform`, so centring has to happen on a wrapper.
+    <div className="pointer-events-none absolute -top-[52px] left-1/2 -translate-x-1/2">
+      <div className="relative animate-bubble-bounce rounded-2xl border-2 border-line bg-surface px-4 py-2 text-xs uppercase tracking-wider text-brand">
         Start
         <span className="absolute -bottom-[7px] left-1/2 -ml-[6px] h-3 w-3 rotate-45 border-b-2 border-r-2 border-line bg-surface" />
       </div>
