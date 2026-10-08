@@ -26,10 +26,17 @@ from app.seed.learners import (
     seed_rivals,
 )
 
-COURSE_FILE = Path(__file__).with_name("spanish_course.json")
+SEED_DIR = Path(__file__).parent
+# The learner starts here; the rest of the catalogue is theirs to switch to.
+DEFAULT_LANGUAGE_CODE = "es"
 
 
-def load_course_file(path: Path = COURSE_FILE) -> CourseFile:
+def course_files() -> list[Path]:
+    """Every ``*_course.json`` beside this module, in a stable order."""
+    return sorted(SEED_DIR.glob("*_course.json"))
+
+
+def load_course_file(path: Path) -> CourseFile:
     return CourseFile.model_validate(json.loads(path.read_text(encoding="utf-8")))
 
 
@@ -103,9 +110,8 @@ def _upsert_lesson(db: Session, skill: Skill, seed: LessonSeed) -> Lesson:
     return lesson
 
 
-def seed_content(db: Session, data: CourseFile | None = None) -> Course:
-    """Insert or refresh the whole course tree."""
-    data = data or load_course_file()
+def seed_course(db: Session, data: CourseFile) -> Course:
+    """Insert or refresh one whole course tree."""
     course = _upsert_course(db, data)
     for unit_seed in data.units:
         unit = _upsert_unit(db, course, unit_seed)
@@ -115,6 +121,23 @@ def seed_content(db: Session, data: CourseFile | None = None) -> Course:
                 _upsert_lesson(db, skill, lesson_seed)
     db.expire(course)
     return course
+
+
+def seed_content(db: Session) -> Course:
+    """Seed every course file and return the one the learner starts on.
+
+    The default course is seeded first so it keeps the lowest id and heads the
+    catalogue; the rest follow alphabetically.
+    """
+    files = course_files()
+    if not files:
+        raise FileNotFoundError(f"No *_course.json files found in {SEED_DIR}")
+
+    data = sorted(
+        (load_course_file(path) for path in files),
+        key=lambda d: (d.course.language_code != DEFAULT_LANGUAGE_CODE, d.course.title),
+    )
+    return [seed_course(db, one) for one in data][0]
 
 
 def seed_learners(db: Session, course: Course) -> None:
@@ -156,8 +179,8 @@ def main() -> None:
     Base.metadata.create_all(bind=engine)
     with SessionLocal() as db:
         seed_all(db)
-        course = db.scalars(select(Course)).first()
-        print(f"Seeded course: {course.title if course else 'none'}")
+        titles = [c.title for c in db.scalars(select(Course).order_by(Course.id)).all()]
+        print(f"Seeded courses: {', '.join(titles) or 'none'}")
 
 
 if __name__ == "__main__":

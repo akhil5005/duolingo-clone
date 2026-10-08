@@ -1,12 +1,14 @@
 "use client";
 
 import clsx from "clsx";
-import { Heart } from "lucide-react";
+import { Check, Heart } from "lucide-react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 
 import { Button3D } from "@/components/ui/Button3D";
 import { Flag } from "@/components/ui/Flag";
+import { Skeleton } from "@/components/ui/Skeleton";
+import { useCourses, useSwitchCourse } from "@/hooks/useCourses";
 import { useRefillHearts } from "@/hooks/useMe";
 import { useCountdown } from "@/hooks/useCountdown";
 import { formatCountdown, WEEKDAY_INITIALS } from "@/lib/format";
@@ -14,19 +16,48 @@ import type { Me } from "@/lib/types";
 
 const HEART_REFILL_COST = 350;
 
-export function CoursePopover({ me }: { me: Me }) {
+export function CoursePopover({ onDone }: { onDone: () => void }) {
+  const { data: courses, isPending } = useCourses();
+  const switchCourse = useSwitchCourse();
+
+  if (isPending || !courses) {
+    return <Skeleton className="h-24 w-full" />;
+  }
+
   return (
-    <div className="space-y-3 text-left">
+    <div className="space-y-2 text-left">
       <p className="text-xs uppercase tracking-widest text-muted">My courses</p>
-      <div className="flex items-center gap-3 rounded-xl border-2 border-info/40 bg-info/10 px-3 py-2">
-        <Flag
-          code={me.course?.language_code ?? ""}
-          fallback={me.course?.flag_emoji}
-          className="h-6 w-9"
-        />
-        <span className="text-sm">{me.course?.title}</span>
-      </div>
-      <p className="text-xs font-semibold text-muted">More languages are coming soon.</p>
+      {courses.map((course) => (
+        <button
+          key={course.id}
+          type="button"
+          disabled={switchCourse.isPending}
+          aria-current={course.is_current ? "true" : undefined}
+          onClick={() =>
+            course.is_current
+              ? onDone()
+              : switchCourse.mutate(course.id, { onSuccess: onDone })
+          }
+          className={clsx(
+            "flex w-full items-center gap-3 rounded-xl border-2 px-3 py-2 text-left transition",
+            course.is_current
+              ? "border-info/40 bg-info/10"
+              : "border-transparent hover:bg-ink/5",
+          )}
+        >
+          <Flag code={course.language_code} fallback={course.flag_emoji} className="h-6 w-9" />
+          <span className="min-w-0 flex-1">
+            <span className="block truncate text-sm">{course.title}</span>
+            <span className="block text-xs font-semibold text-muted">
+              {course.completed_skills}/{course.total_skills} skills
+            </span>
+          </span>
+          {course.is_current && <Check size={18} strokeWidth={3} className="text-info" />}
+        </button>
+      ))}
+      <p className="pt-1 text-xs font-semibold text-muted">
+        Your XP, hearts and streak follow you between courses.
+      </p>
     </div>
   );
 }

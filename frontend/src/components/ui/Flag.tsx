@@ -14,6 +14,27 @@ const FLAGS: Record<string, React.ReactNode> = {
       <rect y="4" width="24" height="8" fill="#F1BF00" />
     </>
   ),
+  fr: (
+    <>
+      <rect width="8" height="16" fill="#002395" />
+      <rect x="8" width="8" height="16" fill="#FFFFFF" />
+      <rect x="16" width="8" height="16" fill="#ED2939" />
+    </>
+  ),
+  de: (
+    <>
+      <rect width="24" height="16" fill="#000000" />
+      <rect y="5.33" width="24" height="5.34" fill="#DD0000" />
+      <rect y="10.67" width="24" height="5.33" fill="#FFCE00" />
+    </>
+  ),
+  it: (
+    <>
+      <rect width="8" height="16" fill="#008C45" />
+      <rect x="8" width="8" height="16" fill="#F4F5F0" />
+      <rect x="16" width="8" height="16" fill="#CD212A" />
+    </>
+  ),
 };
 
 interface FlagProps {

@@ -40,8 +40,9 @@ export function StatsRow({ align = "center" }: { align?: "center" | "right" }) {
           label={`Course: ${me.course?.title ?? "none"}`}
           onClick={() => toggle("course")}
         />
-        <Popover open={open === "course"} onClose={close} align={align}>
-          <CoursePopover me={me} />
+        {/* The course pill sits leftmost, so its panel opens rightwards. */}
+        <Popover open={open === "course"} onClose={close} align="left">
+          <CoursePopover onDone={close} />
         </Popover>
       </div>
 

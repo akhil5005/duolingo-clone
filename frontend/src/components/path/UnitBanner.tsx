@@ -8,7 +8,7 @@ export function UnitBanner({ unit }: { unit: PathUnit }) {
   return (
     <div
       style={{ backgroundColor: unit.color_hex, borderBottomColor: darken(unit.color_hex, 0.2) }}
-      className="sticky top-14 z-20 mb-8 flex items-center justify-between gap-4 rounded-2xl border-b-4 px-5 py-4 text-white xl:top-0"
+      className="sticky top-14 z-20 mb-20 flex items-center justify-between gap-4 rounded-2xl border-b-4 px-5 py-4 text-white xl:top-0"
     >
       <div className="min-w-0">
         <p className="text-[11px] uppercase tracking-[0.18em] opacity-85">

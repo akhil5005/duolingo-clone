@@ -11,7 +11,7 @@ interface PopoverProps {
   className?: string;
   /** Border and arrow colour; defaults to the neutral card border. */
   accent?: string;
-  align?: "center" | "right";
+  align?: "center" | "right" | "left";
 }
 
 /**
@@ -55,7 +55,9 @@ export function Popover({
           <div
             className={clsx(
               "absolute top-full z-40 mt-4",
-              align === "center" ? "left-1/2 -translate-x-1/2" : "right-0",
+              align === "center" && "left-1/2 -translate-x-1/2",
+              align === "right" && "right-0",
+              align === "left" && "left-0",
             )}
           >
             <motion.div
@@ -73,7 +75,9 @@ export function Popover({
                 style={accent ? { borderColor: accent } : undefined}
                 className={clsx(
                   "absolute -top-[9px] h-4 w-4 rotate-45 border-l-2 border-t-2 border-line bg-surface",
-                  align === "center" ? "left-1/2 -ml-2" : "right-6",
+                  align === "center" && "left-1/2 -ml-2",
+                  align === "right" && "right-6",
+                  align === "left" && "left-6",
                 )}
               />
               <div className="relative">{children}</div>

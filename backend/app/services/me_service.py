@@ -9,7 +9,7 @@ from app.core.config import get_settings
 from app.models.user import MAX_HEARTS, User
 from app.repositories import content_repo, xp_repo
 from app.schemas.me import CourseBrief, MeOut, MeUpdate
-from app.services import hearts_service, streak_service, xp_service
+from app.services import course_service, hearts_service, streak_service, xp_service
 
 
 def build(db: Session, user: User) -> MeOut:
@@ -63,6 +63,8 @@ def update(db: Session, user: User, patch: MeUpdate) -> MeOut:
         user.daily_goal_xp = patch.daily_goal_xp
     if patch.sound_enabled is not None:
         user.sound_enabled = patch.sound_enabled
+    if patch.current_course_id is not None:
+        course_service.switch_to(db, user, patch.current_course_id)
     return build(db, user)
 
 

@@ -32,6 +32,17 @@ export interface MePatch {
   display_name?: string;
   daily_goal_xp?: number;
   sound_enabled?: boolean;
+  current_course_id?: number;
+}
+
+export interface CourseSummary {
+  id: number;
+  title: string;
+  language_code: string;
+  flag_emoji: string;
+  total_skills: number;
+  completed_skills: number;
+  is_current: boolean;
 }
 
 export type SkillState = "locked" | "available" | "in_progress" | "completed";

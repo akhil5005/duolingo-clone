@@ -43,3 +43,6 @@ class MeUpdate(BaseModel):
     display_name: Annotated[str, Field(min_length=1, max_length=40)] | None = None
     daily_goal_xp: Literal[10, 20, 30, 50] | None = None
     sound_enabled: bool | None = None
+    # Switching course keeps every other stat: XP, hearts, gems and the streak
+    # are the learner's, not the course's.
+    current_course_id: int | None = None

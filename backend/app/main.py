@@ -6,7 +6,16 @@ from contextlib import asynccontextmanager
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from app.api.routes import debug, leaderboard, lessons, me, path, profile, sessions
+from app.api.routes import (
+    courses,
+    debug,
+    leaderboard,
+    lessons,
+    me,
+    path,
+    profile,
+    sessions,
+)
 from app.core import clock
 from app.core.config import get_settings
 from app.core.database import Base, SessionLocal, engine
@@ -56,6 +65,7 @@ def create_app() -> FastAPI:
     register_error_handlers(app)
     app.include_router(me.router)
     app.include_router(path.router)
+    app.include_router(courses.router)
     app.include_router(leaderboard.router)
     app.include_router(lessons.router)
     app.include_router(sessions.router)

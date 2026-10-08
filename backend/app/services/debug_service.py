@@ -8,17 +8,19 @@ exercises exactly the same code paths a real day would.
 
 from datetime import date
 
+from sqlalchemy import select
 from sqlalchemy.orm import Session
 
 from app.core import clock
 from app.core.config import get_settings
 from app.core.errors import NotFoundError
+from app.models.course import Course
 from app.models.gamification import UserAchievement, XpEvent
 from app.models.progress import UserSkillProgress
 from app.models.session import LessonSession, SessionAnswer
 from app.models.user import User
 from app.repositories import app_state_repo, content_repo
-from app.seed.seed import seed_learners
+from app.seed.seed import DEFAULT_LANGUAGE_CODE, seed_learners
 
 MAX_ADVANCE_DAYS = 365
 
@@ -50,7 +52,9 @@ def reset_demo(db: Session) -> None:
     clock.set_day_offset(0)
     db.flush()
 
-    plain = content_repo.get_course(db)
+    plain = db.scalars(
+        select(Course).where(Course.language_code == DEFAULT_LANGUAGE_CODE)
+    ).first() or content_repo.get_course(db)
     course = content_repo.get_course_tree(db, plain.id) if plain else None
     if course is None:
         raise NotFoundError("No course has been seeded yet.")

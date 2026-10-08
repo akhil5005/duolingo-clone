@@ -1,0 +1,3182 @@
+{
+  "course": {
+    "language_code": "fr",
+    "title": "French",
+    "from_language": "en",
+    "flag_emoji": "🇫🇷"
+  },
+  "units": [
+    {
+      "order_index": 1,
+      "title": "Form basic sentences",
+      "description": "Greet people, name them and talk about food",
+      "color_hex": "#58CC02",
+      "skills": [
+        {
+          "order_index": 1,
+          "title": "Basics",
+          "icon": "MessageCircle",
+          "lessons": [
+            {
+              "order_index": 1,
+              "xp_reward": 10,
+              "exercises": [
+                {
+                  "order_index": 1,
+                  "type": "multiple_choice",
+                  "prompt": "Which one of these is “hello”?",
+                  "payload": {
+                    "question": "Which one of these is “hello”?",
+                    "options": [
+                      {
+                        "id": "a",
+                        "text": "bonjour",
+                        "emoji": "👋"
+                      },
+                      {
+                        "id": "b",
+                        "text": "au revoir",
+                        "emoji": "🚶"
+                      },
+                      {
+                        "id": "c",
+                        "text": "merci",
+                        "emoji": "🙏"
+                      }
+                    ],
+                    "correct_option_id": "a"
+                  },
+                  "tts_text": null,
+                  "tts_lang": null
+                },
+                {
+                  "order_index": 2,
+                  "type": "translate",
+                  "prompt": "Write this in English",
+                  "payload": {
+                    "source_text": "Bonjour, merci",
+                    "source_lang": "fr",
+                    "target_lang": "en",
+                    "tokens": [
+                      "Hello",
+                      "thank",
+                      "you",
+                      "goodbye",
+                      "please",
+                      "yes"
+                    ],
+                    "accepted": [
+                      [
+                        "Hello",
+                        "thank",
+                        "you"
+                      ]
+                    ]
+                  },
+                  "tts_text": "Bonjour, merci",
+                  "tts_lang": "fr-FR"
+                },
+                {
+                  "order_index": 3,
+                  "type": "multiple_choice",
+                  "prompt": "Which one of these is “goodbye”?",
+                  "payload": {
+                    "question": "Which one of these is “goodbye”?",
+                    "options": [
+                      {
+                        "id": "a",
+                        "text": "au revoir",
+                        "emoji": "🚶"
+                      },
+                      {
+                        "id": "b",
+                        "text": "bonjour",
+                        "emoji": "👋"
+                      },
+                      {
+                        "id": "c",
+                        "text": "s'il vous plaît",
+                        "emoji": "🙏"
+                      }
+                    ],
+                    "correct_option_id": "a"
+                  },
+                  "tts_text": null,
+                  "tts_lang": null
+                },
+                {
+                  "order_index": 4,
+                  "type": "fill_blank",
+                  "prompt": "Fill in the blank",
+                  "payload": {
+                    "before": "Merci",
+                    "after": "pour tout.",
+                    "options": [
+                      "beaucoup",
+                      "bonjour",
+                      "au revoir"
+                    ],
+                    "correct": "beaucoup",
+                    "translation": "Thank you very much for everything."
+                  },
+                  "tts_text": null,
+                  "tts_lang": null
+                },
+                {
+                  "order_index": 5,
+                  "type": "match_pairs",
+                  "prompt": "Tap the matching pairs",
+                  "payload": {
+                    "pairs": [
+                      {
+                        "left": "bonjour",
+                        "right": "hello"
+                      },
+                      {
+                        "left": "au revoir",
+                        "right": "goodbye"
+                      },
+                      {
+                        "left": "merci",
+                        "right": "thank you"
+                      },
+                      {
+                        "left": "s'il vous plaît",
+                        "right": "please"
+                      },
+                      {
+                        "left": "oui",
+                        "right": "yes"
+                      }
+                    ]
+                  },
+                  "tts_text": null,
+                  "tts_lang": null
+                },
+                {
+                  "order_index": 6,
+                  "type": "type_answer",
+                  "prompt": "Type this in French",
+                  "payload": {
+                    "source_text": "Thank you",
+                    "target_lang": "fr",
+                    "accepted": [
+                      "Merci"
+                    ]
+                  },
+                  "tts_text": null,
+                  "tts_lang": null
+                },
+                {
+                  "order_index": 7,
+                  "type": "translate",
+                  "prompt": "Write this in French",
+                  "payload": {
+                    "source_text": "Hello, please",
+                    "source_lang": "en",
+                    "target_lang": "fr",
+                    "tokens": [
+                      "Bonjour",
+                      "s'il vous plaît",
+                      "merci",
+                      "au revoir",
+                      "oui"
+                    ],
+                    "accepted": [
+                      [
+                        "Bonjour",
+                        "s'il vous plaît"
+                      ]
+                    ]
+                  },
+                  "tts_text": null,
+                  "tts_lang": null
+                }
+              ]
+            },
+            {
+              "order_index": 2,
+              "xp_reward": 10,
+              "exercises": [
+                {
+                  "order_index": 1,
+                  "type": "multiple_choice",
+                  "prompt": "Which one of these is “the boy”?",
+                  "payload": {
+                    "question": "Which one of these is “the boy”?",
+                    "options": [
+                      {
+                        "id": "a",
+                        "text": "le garçon",
+                        "emoji": "👦"
+                      },
+                      {
+                        "id": "b",
+                        "text": "la fille",
+                        "emoji": "👧"
+                      },
+                      {
+                        "id": "c",
+                        "text": "l'homme",
+                        "emoji": "👨"
+                      }
+                    ],
+                    "correct_option_id": "a"
+                  },
+                  "tts_text": null,
+                  "tts_lang": null
+                },
+                {
+                  "order_index": 2,
+                  "type": "fill_blank",
+                  "prompt": "Fill in the blank",
+                  "payload": {
+                    "before": "La",
+                    "after": "dit bonjour.",
+                    "options": [
+                      "fille",
+                      "garçon",
+                      "homme"
+                    ],
+                    "correct": "fille",
+                    "translation": "The girl says hello."
+                  },
+                  "tts_text": null,
+                  "tts_lang": null
+                },
+                {
+                  "order_index": 3,
+                  "type": "translate",
+                  "prompt": "Write this in English",
+                  "payload": {
+                    "source_text": "L'homme et la femme",
+                    "source_lang": "fr",
+                    "target_lang": "en",
+                    "tokens": [
+                      "The",
+                      "man",
+                      "and",
+                      "the",
+                      "woman",
+                      "boy",
+                      "girl"
+                    ],
+                    "accepted": [
+                      [
+                        "The",
+                        "man",
+                        "and",
+                        "the",
+                        "woman"
+                      ]
+                    ]
+                  },
+                  "tts_text": "L'homme et la femme",
+                  "tts_lang": "fr-FR"
+                },
+                {
+                  "order_index": 4,
+                  "type": "multiple_choice",
+                  "prompt": "Which one of these is “the woman”?",
+                  "payload": {
+                    "question": "Which one of these is “the woman”?",
+                    "options": [
+                      {
+                        "id": "a",
+                        "text": "la femme",
+                        "emoji": "👩"
+                      },
+                      {
+                        "id": "b",
+                        "text": "l'homme",
+                        "emoji": "👨"
+                      },
+                      {
+                        "id": "c",
+                        "text": "la fille",
+                        "emoji": "👧"
+                      }
+                    ],
+                    "correct_option_id": "a"
+                  },
+                  "tts_text": null,
+                  "tts_lang": null
+                },
+                {
+                  "order_index": 5,
+                  "type": "match_pairs",
+                  "prompt": "Tap the matching pairs",
+                  "payload": {
+                    "pairs": [
+                      {
+                        "left": "le garçon",
+                        "right": "the boy"
+                      },
+                      {
+                        "left": "la fille",
+                        "right": "the girl"
+                      },
+                      {
+                        "left": "l'homme",
+                        "right": "the man"
+                      },
+                      {
+                        "left": "la femme",
+                        "right": "the woman"
+                      },
+                      {
+                        "left": "oui",
+                        "right": "yes"
+                      }
+                    ]
+                  },
+                  "tts_text": null,
+                  "tts_lang": null
+                },
+                {
+                  "order_index": 6,
+                  "type": "type_answer",
+                  "prompt": "Type this in French",
+                  "payload": {
+                    "source_text": "The girl",
+                    "target_lang": "fr",
+                    "accepted": [
+                      "La fille"
+                    ]
+                  },
+                  "tts_text": null,
+                  "tts_lang": null
+                }
+              ]
+            },
+            {
+              "order_index": 3,
+              "xp_reward": 10,
+              "exercises": [
+                {
+                  "order_index": 1,
+                  "type": "multiple_choice",
+                  "prompt": "Which one of these is “yes”?",
+                  "payload": {
+                    "question": "Which one of these is “yes”?",
+                    "options": [
+                      {
+                        "id": "a",
+                        "text": "oui",
+                        "emoji": "✅"
+                      },
+                      {
+                        "id": "b",
+                        "text": "non",
+                        "emoji": "❌"
+                      },
+                      {
+                        "id": "c",
+                        "text": "bonjour",
+                        "emoji": "👋"
+                      }
+                    ],
+                    "correct_option_id": "a"
+                  },
+                  "tts_text": null,
+                  "tts_lang": null
+                },
+                {
+                  "order_index": 2,
+                  "type": "fill_blank",
+                  "prompt": "Fill in the blank",
+                  "payload": {
+                    "before": "L'homme dit",
+                    "after": "à la femme.",
+                    "options": [
+                      "bonjour",
+                      "au revoir",
+                      "merci"
+                    ],
+                    "correct": "bonjour",
+                    "translation": "The man says hello to the woman."
+                  },
+                  "tts_text": null,
+                  "tts_lang": null
+                },
+                {
+                  "order_index": 3,
+                  "type": "match_pairs",
+                  "prompt": "Tap the matching pairs",
+                  "payload": {
+                    "pairs": [
+                      {
+                        "left": "oui",
+                        "right": "yes"
+                      },
+                      {
+                        "left": "non",
+                        "right": "no"
+                      },
+                      {
+                        "left": "merci",
+                        "right": "thank you"
+                      },
+                      {
+                        "left": "s'il vous plaît",
+                        "right": "please"
+                      },
+                      {
+                        "left": "au revoir",
+                        "right": "goodbye"
+                      }
+                    ]
+                  },
+                  "tts_text": null,
+                  "tts_lang": null
+                },
+                {
+                  "order_index": 4,
+                  "type": "translate",
+                  "prompt": "Write this in French",
+                  "payload": {
+                    "source_text": "The woman says goodbye",
+                    "source_lang": "en",
+                    "target_lang": "fr",
+                    "tokens": [
+                      "La",
+                      "femme",
+                      "dit",
+                      "au revoir",
+                      "bonjour",
+                      "garçon"
+                    ],
+                    "accepted": [
+                      [
+                        "La",
+                        "femme",
+                        "dit",
+                        "au revoir"
+                      ]
+                    ]
+                  },
+                  "tts_text": null,
+                  "tts_lang": null
+                },
+                {
+                  "order_index": 5,
+                  "type": "multiple_choice",
+                  "prompt": "Which one of these is “please”?",
+                  "payload": {
+                    "question": "Which one of these is “please”?",
+                    "options": [
+                      {
+                        "id": "a",
+                        "text": "s'il vous plaît",
+                        "emoji": "🙏"
+                      },
+                      {
+                        "id": "b",
+                        "text": "merci",
+                        "emoji": "😊"
+                      },
+                      {
+                        "id": "c",
+                        "text": "oui",
+                        "emoji": "✅"
+                      }
+                    ],
+                    "correct_option_id": "a"
+                  },
+                  "tts_text": null,
+                  "tts_lang": null
+                },
+                {
+                  "order_index": 6,
+                  "type": "type_answer",
+                  "prompt": "Type this in French",
+                  "payload": {
+                    "source_text": "Yes, please",
+                    "target_lang": "fr",
+                    "accepted": [
+                      "Oui, s'il vous plaît"
+                    ]
+                  },
+                  "tts_text": null,
+                  "tts_lang": null
+                },
+                {
+                  "order_index": 7,
+                  "type": "translate",
+                  "prompt": "Write this in English",
+                  "payload": {
+                    "source_text": "La fille dit merci",
+                    "source_lang": "fr",
+                    "target_lang": "en",
+                    "tokens": [
+                      "The",
+                      "girl",
+                      "says",
+                      "thank",
+                      "you",
+                      "man",
+                      "goodbye"
+                    ],
+                    "accepted": [
+                      [
+                        "The",
+                        "girl",
+                        "says",
+                        "thank",
+                        "you"
+                      ]
+                    ]
+                  },
+                  "tts_text": "La fille dit merci",
+                  "tts_lang": "fr-FR"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "order_index": 2,
+          "title": "Food & Drink",
+          "icon": "Utensils",
+          "lessons": [
+            {
+              "order_index": 1,
+              "xp_reward": 10,
+              "exercises": [
+                {
+                  "order_index": 1,
+                  "type": "multiple_choice",
+                  "prompt": "Which one of these is “the water”?",
+                  "payload": {
+                    "question": "Which one of these is “the water”?",
+                    "options": [
+                      {
+                        "id": "a",
+                        "text": "l'eau",
+                        "emoji": "💧"
+                      },
+                      {
+                        "id": "b",
+                        "text": "le pain",
+                        "emoji": "🍞"
+                      },
+                      {
+                        "id": "c",
+                        "text": "le lait",
+                        "emoji": "🥛"
+                      }
+                    ],
+                    "correct_option_id": "a"
+                  },
+                  "tts_text": null,
+                  "tts_lang": null
+                },
+                {
+                  "order_index": 2,
+                  "type": "multiple_choice",
+                  "prompt": "Which one of these is “the bread”?",
+                  "payload": {
+                    "question": "Which one of these is “the bread”?",
+                    "options": [
+                      {
+                        "id": "a",
+                        "text": "le pain",
+                        "emoji": "🍞"
+                      },
+                      {
+                        "id": "b",
+                        "text": "la pomme",
+                        "emoji": "🍎"
+                      },
+                      {
+                        "id": "c",
+                        "text": "l'eau",
+                        "emoji": "💧"
+                      }
+                    ],
+                    "correct_option_id": "a"
+                  },
+                  "tts_text": null,
+                  "tts_lang": null
+                },
+                {
+                  "order_index": 3,
+                  "type": "match_pairs",
+                  "prompt": "Tap the matching pairs",
+                  "payload": {
+                    "pairs": [
+                      {
+                        "left": "l'eau",
+                        "right": "the water"
+                      },
+                      {
+                        "left": "le pain",
+                        "right": "the bread"
+                      },
+                      {
+                        "left": "le lait",
+                        "right": "the milk"
+                      },
+                      {
+                        "left": "la pomme",
+                        "right": "the apple"
+                      },
+                      {
+                        "left": "manger",
+                        "right": "to eat"
+                      }
+                    ]
+                  },
+                  "tts_text": null,
+                  "tts_lang": null
+                },
+                {
+                  "order_index": 4,
+                  "type": "fill_blank",
+                  "prompt": "Fill in the blank",
+                  "payload": {
+                    "before": "Je bois de l'",
+                    "after": "tous les jours.",
+                    "options": [
+                      "eau",
+                      "pain",
+                      "pomme"
+                    ],
+                    "correct": "eau",
+                    "translation": "I drink water every day."
+                  },
+                  "tts_text": null,
+                  "tts_lang": null
+                },
+                {
+                  "order_index": 5,
+                  "type": "translate",
+                  "prompt": "Write this in English",
+                  "payload": {
+                    "source_text": "Je bois de l'eau",
+                    "source_lang": "fr",
+                    "target_lang": "en",
+                    "tokens": [
+                      "I",
+                      "drink",
+                      "water",
+                      "eat",
+                      "the",
+                      "bread"
+                    ],
+                    "accepted": [
+                      [
+                        "I",
+                        "drink",
+                        "water"
+                      ]
+                    ]
+                  },
+                  "tts_text": "Je bois de l'eau",
+                  "tts_lang": "fr-FR"
+                },
+                {
+                  "order_index": 6,
+                  "type": "type_answer",
+                  "prompt": "Type this in French",
+                  "payload": {
+                    "source_text": "The milk",
+                    "target_lang": "fr",
+                    "accepted": [
+                      "Le lait"
+                    ]
+                  },
+                  "tts_text": null,
+                  "tts_lang": null
+                },
+                {
+                  "order_index": 7,
+                  "type": "translate",
+                  "prompt": "Write this in French",
+                  "payload": {
+                    "source_text": "I eat bread",
+                    "source_lang": "en",
+                    "target_lang": "fr",
+                    "tokens": [
+                      "Je",
+                      "mange",
+                      "du",
+                      "pain",
+                      "bois",
+                      "eau",
+                      "lait"
+                    ],
+                    "accepted": [
+                      [
+                        "Je",
+                        "mange",
+                        "du",
+                        "pain"
+                      ]
+                    ]
+                  },
+                  "tts_text": null,
+                  "tts_lang": null
+                }
+              ]
+            },
+            {
+              "order_index": 2,
+              "xp_reward": 10,
+              "exercises": [
+                {
+                  "order_index": 1,
+                  "type": "multiple_choice",
+                  "prompt": "Which one of these means “to drink”?",
+                  "payload": {
+                    "question": "Which one of these means “to drink”?",
+                    "options": [
+                      {
+                        "id": "a",
+                        "text": "boire",
+                        "emoji": "🥤"
+                      },
+                      {
+                        "id": "b",
+                        "text": "manger",
+                        "emoji": "🍽"
+                      },
+                      {
+                        "id": "c",
+                        "text": "le lait",
+                        "emoji": "🥛"
+                      }
+                    ],
+                    "correct_option_id": "a"
+                  },
+                  "tts_text": null,
+                  "tts_lang": null
+                },
+                {
+                  "order_index": 2,
+                  "type": "fill_blank",
+                  "prompt": "Fill in the blank",
+                  "payload": {
+                    "before": "La fille",
+                    "after": "du lait.",
+                    "options": [
+                      "boit",
+                      "mange",
+                      "dit"
+                    ],
+                    "correct": "boit",
+                    "translation": "The girl drinks milk."
+                  },
+                  "tts_text": null,
+                  "tts_lang": null
+                },
+                {
+                  "order_index": 3,
+                  "type": "translate",
+                  "prompt": "Write this in English",
+                  "payload": {
+                    "source_text": "Le garçon mange une pomme",
+                    "source_lang": "fr",
+                    "target_lang": "en",
+                    "tokens": [
+                      "The",
+                      "boy",
+                      "eats",
+                      "an",
+                      "apple",
+                      "drinks",
+                      "bread"
+                    ],
+                    "accepted": [
+                      [
+                        "The",
+                        "boy",
+                        "eats",
+                        "an",
+                        "apple"
+                      ]
+                    ]
+                  },
+                  "tts_text": "Le garçon mange une pomme",
+                  "tts_lang": "fr-FR"
+                },
+                {
+                  "order_index": 4,
+                  "type": "multiple_choice",
+                  "prompt": "Which one of these is “the apple”?",
+                  "payload": {
+                    "question": "Which one of these is “the apple”?",
+                    "options": [
+                      {
+                        "id": "a",
+                        "text": "la pomme",
+                        "emoji": "🍎"
+                      },
+                      {
+                        "id": "b",
+                        "text": "le pain",
+                        "emoji": "🍞"
+                      },
+                      {
+                        "id": "c",
+                        "text": "le lait",
+                        "emoji": "🥛"
+                      }
+                    ],
+                    "correct_option_id": "a"
+                  },
+                  "tts_text": null,
+                  "tts_lang": null
+                },
+                {
+                  "order_index": 5,
+                  "type": "match_pairs",
+                  "prompt": "Tap the matching pairs",
+                  "payload": {
+                    "pairs": [
+                      {
+                        "left": "manger",
+                        "right": "to eat"
+                      },
+                      {
+                        "left": "boire",
+                        "right": "to drink"
+                      },
+                      {
+                        "left": "l'eau",
+                        "right": "the water"
+                      },
+                      {
+                        "left": "la pomme",
+                        "right": "the apple"
+                      },
+                      {
+                        "left": "le lait",
+                        "right": "the milk"
+                      }
+                    ]
+                  },
+                  "tts_text": null,
+                  "tts_lang": null
+                },
+                {
+                  "order_index": 6,
+                  "type": "type_answer",
+                  "prompt": "Type this in French",
+                  "payload": {
+                    "source_text": "The boy eats bread",
+                    "target_lang": "fr",
+                    "accepted": [
+                      "Le garçon mange du pain"
+                    ]
+                  },
+                  "tts_text": null,
+                  "tts_lang": null
+                }
+              ]
+            },
+            {
+              "order_index": 3,
+              "xp_reward": 10,
+              "exercises": [
+                {
+                  "order_index": 1,
+                  "type": "translate",
+                  "prompt": "Write this in French",
+                  "payload": {
+                    "source_text": "I drink milk",
+                    "source_lang": "en",
+                    "target_lang": "fr",
+                    "tokens": [
+                      "Je",
+                      "bois",
+                      "du",
+                      "lait",
+                      "mange",
+                      "pain",
+                      "eau"
+                    ],
+                    "accepted": [
+                      [
+                        "Je",
+                        "bois",
+                        "du",
+                        "lait"
+                      ]
+                    ]
+                  },
+                  "tts_text": null,
+                  "tts_lang": null
+                },
+                {
+                  "order_index": 2,
+                  "type": "fill_blank",
+                  "prompt": "Fill in the blank",
+                  "payload": {
+                    "before": "L'homme",
+                    "after": "du pain.",
+                    "options": [
+                      "mange",
+                      "boit",
+                      "dit"
+                    ],
+                    "correct": "mange",
+                    "translation": "The man eats bread."
+                  },
+                  "tts_text": null,
+                  "tts_lang": null
+                },
+                {
+                  "order_index": 3,
+                  "type": "multiple_choice",
+                  "prompt": "Which sentence means “The woman drinks water”?",
+                  "payload": {
+                    "question": "Which sentence means “The woman drinks water”?",
+                    "options": [
+                      {
+                        "id": "a",
+                        "text": "La femme boit de l'eau",
+                        "emoji": null
+                      },
+                      {
+                        "id": "b",
+                        "text": "La femme mange de l'eau",
+                        "emoji": null
+                      },
+                      {
+                        "id": "c",
+                        "text": "L'homme boit de l'eau",
+                        "emoji": null
+                      }
+                    ],
+                    "correct_option_id": "a"
+                  },
+                  "tts_text": null,
+                  "tts_lang": null
+                },
+                {
+                  "order_index": 4,
+                  "type": "match_pairs",
+                  "prompt": "Tap the matching pairs",
+                  "payload": {
+                    "pairs": [
+                      {
+                        "left": "Je mange",
+                        "right": "I eat"
+                      },
+                      {
+                        "left": "Je bois",
+                        "right": "I drink"
+                      },
+                      {
+                        "left": "le pain",
+                        "right": "the bread"
+                      },
+                      {
+                        "left": "l'eau",
+                        "right": "the water"
+                      },
+                      {
+                        "left": "la pomme",
+                        "right": "the apple"
+                      }
+                    ]
+                  },
+                  "tts_text": null,
+                  "tts_lang": null
+                },
+                {
+                  "order_index": 5,
+                  "type": "type_answer",
+                  "prompt": "Type this in French",
+                  "payload": {
+                    "source_text": "I eat an apple",
+                    "target_lang": "fr",
+                    "accepted": [
+                      "Je mange une pomme"
+                    ]
+                  },
+                  "tts_text": null,
+                  "tts_lang": null
+                },
+                {
+                  "order_index": 6,
+                  "type": "translate",
+                  "prompt": "Write this in English",
+                  "payload": {
+                    "source_text": "La femme boit du lait",
+                    "source_lang": "fr",
+                    "target_lang": "en",
+                    "tokens": [
+                      "The",
+                      "woman",
+                      "drinks",
+                      "milk",
+                      "eats",
+                      "bread"
+                    ],
+                    "accepted": [
+                      [
+                        "The",
+                        "woman",
+                        "drinks",
+                        "milk"
+                      ]
+                    ]
+                  },
+                  "tts_text": "La femme boit du lait",
+                  "tts_lang": "fr-FR"
+                },
+                {
+                  "order_index": 7,
+                  "type": "multiple_choice",
+                  "prompt": "Which one of these is “the milk”?",
+                  "payload": {
+                    "question": "Which one of these is “the milk”?",
+                    "options": [
+                      {
+                        "id": "a",
+                        "text": "le lait",
+                        "emoji": "🥛"
+                      },
+                      {
+                        "id": "b",
+                        "text": "l'eau",
+                        "emoji": "💧"
+                      },
+                      {
+                        "id": "c",
+                        "text": "la pomme",
+                        "emoji": "🍎"
+                      }
+                    ],
+                    "correct_option_id": "a"
+                  },
+                  "tts_text": null,
+                  "tts_lang": null
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "order_index": 3,
+          "title": "Family",
+          "icon": "Users",
+          "lessons": [
+            {
+              "order_index": 1,
+              "xp_reward": 10,
+              "exercises": [
+                {
+                  "order_index": 1,
+                  "type": "multiple_choice",
+                  "prompt": "Which one of these is “the mother”?",
+                  "payload": {
+                    "question": "Which one of these is “the mother”?",
+                    "options": [
+                      {
+                        "id": "a",
+                        "text": "la mère",
+                        "emoji": "👩"
+                      },
+                      {
+                        "id": "b",
+                        "text": "le père",
+                        "emoji": "👨"
+                      },
+                      {
+                        "id": "c",
+                        "text": "la sœur",
+                        "emoji": "👧"
+                      }
+                    ],
+                    "correct_option_id": "a"
+                  },
+                  "tts_text": null,
+                  "tts_lang": null
+                },
+                {
+                  "order_index": 2,
+                  "type": "multiple_choice",
+                  "prompt": "Which one of these is “the father”?",
+                  "payload": {
+                    "question": "Which one of these is “the father”?",
+                    "options": [
+                      {
+                        "id": "a",
+                        "text": "le père",
+                        "emoji": "👨"
+                      },
+                      {
+                        "id": "b",
+                        "text": "la mère",
+                        "emoji": "👩"
+                      },
+                      {
+                        "id": "c",
+                        "text": "le frère",
+                        "emoji": "👦"
+                      }
+                    ],
+                    "correct_option_id": "a"
+                  },
+                  "tts_text": null,
+                  "tts_lang": null
+                },
+                {
+                  "order_index": 3,
+                  "type": "match_pairs",
+                  "prompt": "Tap the matching pairs",
+                  "payload": {
+                    "pairs": [
+                      {
+                        "left": "la mère",
+                        "right": "the mother"
+                      },
+                      {
+                        "left": "le père",
+                        "right": "the father"
+                      },
+                      {
+                        "left": "le frère",
+                        "right": "the brother"
+                      },
+                      {
+                        "left": "la sœur",
+                        "right": "the sister"
+                      },
+                      {
+                        "left": "la famille",
+                        "right": "the family"
+                      }
+                    ]
+                  },
+                  "tts_text": null,
+                  "tts_lang": null
+                },
+                {
+                  "order_index": 4,
+                  "type": "fill_blank",
+                  "prompt": "Fill in the blank",
+                  "payload": {
+                    "before": "Ma sœur boit du",
+                    "after": "au petit déjeuner.",
+                    "options": [
+                      "lait",
+                      "pain",
+                      "pomme"
+                    ],
+                    "correct": "lait",
+                    "translation": "My sister drinks milk at breakfast."
+                  },
+                  "tts_text": null,
+                  "tts_lang": null
+                },
+                {
+                  "order_index": 5,
+                  "type": "translate",
+                  "prompt": "Write this in English",
+                  "payload": {
+                    "source_text": "Ma mère et mon père",
+                    "source_lang": "fr",
+                    "target_lang": "en",
+                    "tokens": [
+                      "My",
+                      "mother",
+                      "and",
+                      "my",
+                      "father",
+                      "sister",
+                      "brother"
+                    ],
+                    "accepted": [
+                      [
+                        "My",
+                        "mother",
+                        "and",
+                        "my",
+                        "father"
+                      ]
+                    ]
+                  },
+                  "tts_text": "Ma mère et mon père",
+                  "tts_lang": "fr-FR"
+                },
+                {
+                  "order_index": 6,
+                  "type": "type_answer",
+                  "prompt": "Type this in French",
+                  "payload": {
+                    "source_text": "My family",
+                    "target_lang": "fr",
+                    "accepted": [
+                      "Ma famille"
+                    ]
+                  },
+                  "tts_text": null,
+                  "tts_lang": null
+                },
+                {
+                  "order_index": 7,
+                  "type": "translate",
+                  "prompt": "Write this in French",
+                  "payload": {
+                    "source_text": "My brother eats bread",
+                    "source_lang": "en",
+                    "target_lang": "fr",
+                    "tokens": [
+                      "Mon",
+                      "frère",
+                      "mange",
+                      "du",
+                      "pain",
+                      "sœur",
+                      "boit"
+                    ],
+                    "accepted": [
+                      [
+                        "Mon",
+                        "frère",
+                        "mange",
+                        "du",
+                        "pain"
+                      ]
+                    ]
+                  },
+                  "tts_text": null,
+                  "tts_lang": null
+                }
+              ]
+            },
+            {
+              "order_index": 2,
+              "xp_reward": 10,
+              "exercises": [
+                {
+                  "order_index": 1,
+                  "type": "multiple_choice",
+                  "prompt": "Which one of these is “my sister”?",
+                  "payload": {
+                    "question": "Which one of these is “my sister”?",
+                    "options": [
+                      {
+                        "id": "a",
+                        "text": "ma sœur",
+                        "emoji": "👧"
+                      },
+                      {
+                        "id": "b",
+                        "text": "mon frère",
+                        "emoji": "👦"
+                      },
+                      {
+                        "id": "c",
+                        "text": "ma mère",
+                        "emoji": "👩"
+                      }
+                    ],
+                    "correct_option_id": "a"
+                  },
+                  "tts_text": null,
+                  "tts_lang": null
+                },
+                {
+                  "order_index": 2,
+                  "type": "fill_blank",
+                  "prompt": "Fill in the blank",
+                  "payload": {
+                    "before": "Ma",
+                    "after": "boit de l'eau.",
+                    "options": [
+                      "sœur",
+                      "pain",
+                      "lait"
+                    ],
+                    "correct": "sœur",
+                    "translation": "My sister drinks water."
+                  },
+                  "tts_text": null,
+                  "tts_lang": null
+                },
+                {
+                  "order_index": 3,
+                  "type": "translate",
+                  "prompt": "Write this in English",
+                  "payload": {
+                    "source_text": "Ton frère mange une pomme",
+                    "source_lang": "fr",
+                    "target_lang": "en",
+                    "tokens": [
+                      "Your",
+                      "brother",
+                      "eats",
+                      "an",
+                      "apple",
+                      "sister",
+                      "drinks"
+                    ],
+                    "accepted": [
+                      [
+                        "Your",
+                        "brother",
+                        "eats",
+                        "an",
+                        "apple"
+                      ]
+                    ]
+                  },
+                  "tts_text": "Ton frère mange une pomme",
+                  "tts_lang": "fr-FR"
+                },
+                {
+                  "order_index": 4,
+                  "type": "match_pairs",
+                  "prompt": "Tap the matching pairs",
+                  "payload": {
+                    "pairs": [
+                      {
+                        "left": "ma mère",
+                        "right": "my mother"
+                      },
+                      {
+                        "left": "ton père",
+                        "right": "your father"
+                      },
+                      {
+                        "left": "ma sœur",
+                        "right": "my sister"
+                      },
+                      {
+                        "left": "ton frère",
+                        "right": "your brother"
+                      },
+                      {
+                        "left": "la famille",
+                        "right": "the family"
+                      }
+                    ]
+                  },
+                  "tts_text": null,
+                  "tts_lang": null
+                },
+                {
+                  "order_index": 5,
+                  "type": "type_answer",
+                  "prompt": "Type this in French",
+                  "payload": {
+                    "source_text": "Your mother",
+                    "target_lang": "fr",
+                    "accepted": [
+                      "Ta mère"
+                    ]
+                  },
+                  "tts_text": null,
+                  "tts_lang": null
+                },
+                {
+                  "order_index": 6,
+                  "type": "multiple_choice",
+                  "prompt": "Which one of these is “the family”?",
+                  "payload": {
+                    "question": "Which one of these is “the family”?",
+                    "options": [
+                      {
+                        "id": "a",
+                        "text": "la famille",
+                        "emoji": "👪"
+                      },
+                      {
+                        "id": "b",
+                        "text": "la sœur",
+                        "emoji": "👧"
+                      },
+                      {
+                        "id": "c",
+                        "text": "le père",
+                        "emoji": "👨"
+                      }
+                    ],
+                    "correct_option_id": "a"
+                  },
+                  "tts_text": null,
+                  "tts_lang": null
+                }
+              ]
+            },
+            {
+              "order_index": 3,
+              "xp_reward": 10,
+              "exercises": [
+                {
+                  "order_index": 1,
+                  "type": "translate",
+                  "prompt": "Write this in French",
+                  "payload": {
+                    "source_text": "My mother drinks milk",
+                    "source_lang": "en",
+                    "target_lang": "fr",
+                    "tokens": [
+                      "Ma",
+                      "mère",
+                      "boit",
+                      "du",
+                      "lait",
+                      "mange",
+                      "pain"
+                    ],
+                    "accepted": [
+                      [
+                        "Ma",
+                        "mère",
+                        "boit",
+                        "du",
+                        "lait"
+                      ]
+                    ]
+                  },
+                  "tts_text": null,
+                  "tts_lang": null
+                },
+                {
+                  "order_index": 2,
+                  "type": "fill_blank",
+                  "prompt": "Fill in the blank",
+                  "payload": {
+                    "before": "Mon frère et ma sœur",
+                    "after": "du pain.",
+                    "options": [
+                      "mangent",
+                      "mange",
+                      "boit"
+                    ],
+                    "correct": "mangent",
+                    "translation": "My brother and my sister eat bread."
+                  },
+                  "tts_text": null,
+                  "tts_lang": null
+                },
+                {
+                  "order_index": 3,
+                  "type": "multiple_choice",
+                  "prompt": "Which sentence means “Your father eats an apple”?",
+                  "payload": {
+                    "question": "Which sentence means “Your father eats an apple”?",
+                    "options": [
+                      {
+                        "id": "a",
+                        "text": "Ton père mange une pomme",
+                        "emoji": null
+                      },
+                      {
+                        "id": "b",
+                        "text": "Mon père mange une pomme",
+                        "emoji": null
+                      },
+                      {
+                        "id": "c",
+                        "text": "Ton père boit une pomme",
+                        "emoji": null
+                      }
+                    ],
+                    "correct_option_id": "a"
+                  },
+                  "tts_text": null,
+                  "tts_lang": null
+                },
+                {
+                  "order_index": 4,
+                  "type": "match_pairs",
+                  "prompt": "Tap the matching pairs",
+                  "payload": {
+                    "pairs": [
+                      {
+                        "left": "ma famille",
+                        "right": "my family"
+                      },
+                      {
+                        "left": "ma mère",
+                        "right": "my mother"
+                      },
+                      {
+                        "left": "mon père",
+                        "right": "my father"
+                      },
+                      {
+                        "left": "ta sœur",
+                        "right": "your sister"
+                      },
+                      {
+                        "left": "ton frère",
+                        "right": "your brother"
+                      }
+                    ]
+                  },
+                  "tts_text": null,
+                  "tts_lang": null
+                },
+                {
+                  "order_index": 5,
+                  "type": "type_answer",
+                  "prompt": "Type this in French",
+                  "payload": {
+                    "source_text": "My brother",
+                    "target_lang": "fr",
+                    "accepted": [
+                      "Mon frère"
+                    ]
+                  },
+                  "tts_text": null,
+                  "tts_lang": null
+                },
+                {
+                  "order_index": 6,
+                  "type": "translate",
+                  "prompt": "Write this in English",
+                  "payload": {
+                    "source_text": "Ma famille boit de l'eau",
+                    "source_lang": "fr",
+                    "target_lang": "en",
+                    "tokens": [
+                      "My",
+                      "family",
+                      "drinks",
+                      "water",
+                      "eats",
+                      "bread"
+                    ],
+                    "accepted": [
+                      [
+                        "My",
+                        "family",
+                        "drinks",
+                        "water"
+                      ]
+                    ]
+                  },
+                  "tts_text": "Ma famille boit de l'eau",
+                  "tts_lang": "fr-FR"
+                },
+                {
+                  "order_index": 7,
+                  "type": "multiple_choice",
+                  "prompt": "Which one of these is “the brother”?",
+                  "payload": {
+                    "question": "Which one of these is “the brother”?",
+                    "options": [
+                      {
+                        "id": "a",
+                        "text": "le frère",
+                        "emoji": "👦"
+                      },
+                      {
+                        "id": "b",
+                        "text": "la sœur",
+                        "emoji": "👧"
+                      },
+                      {
+                        "id": "c",
+                        "text": "le père",
+                        "emoji": "👨"
+                      }
+                    ],
+                    "correct_option_id": "a"
+                  },
+                  "tts_text": null,
+                  "tts_lang": null
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "order_index": 2,
+      "title": "Get around in a city",
+      "description": "Find your way, describe things and meet animals",
+      "color_hex": "#1CB0F6",
+      "skills": [
+        {
+          "order_index": 1,
+          "title": "Travel",
+          "icon": "Plane",
+          "lessons": [
+            {
+              "order_index": 1,
+              "xp_reward": 10,
+              "exercises": [
+                {
+                  "order_index": 1,
+                  "type": "multiple_choice",
+                  "prompt": "Which one of these is “the hotel”?",
+                  "payload": {
+                    "question": "Which one of these is “the hotel”?",
+                    "options": [
+                      {
+                        "id": "a",
+                        "text": "l'hôtel",
+                        "emoji": "🏨"
+                      },
+                      {
+                        "id": "b",
+                        "text": "le train",
+                        "emoji": "🚆"
+                      },
+                      {
+                        "id": "c",
+                        "text": "l'aéroport",
+                        "emoji": "✈"
+                      }
+                    ],
+                    "correct_option_id": "a"
+                  },
+                  "tts_text": null,
+                  "tts_lang": null
+                },
+                {
+                  "order_index": 2,
+                  "type": "multiple_choice",
+                  "prompt": "Which one of these is “the train”?",
+                  "payload": {
+                    "question": "Which one of these is “the train”?",
+                    "options": [
+                      {
+                        "id": "a",
+                        "text": "le train",
+                        "emoji": "🚆"
+                      },
+                      {
+                        "id": "b",
+                        "text": "l'hôtel",
+                        "emoji": "🏨"
+                      },
+                      {
+                        "id": "c",
+                        "text": "l'aéroport",
+                        "emoji": "✈"
+                      }
+                    ],
+                    "correct_option_id": "a"
+                  },
+                  "tts_text": null,
+                  "tts_lang": null
+                },
+                {
+                  "order_index": 3,
+                  "type": "match_pairs",
+                  "prompt": "Tap the matching pairs",
+                  "payload": {
+                    "pairs": [
+                      {
+                        "left": "l'hôtel",
+                        "right": "the hotel"
+                      },
+                      {
+                        "left": "le train",
+                        "right": "the train"
+                      },
+                      {
+                        "left": "l'aéroport",
+                        "right": "the airport"
+                      },
+                      {
+                        "left": "la ville",
+                        "right": "the city"
+                      },
+                      {
+                        "left": "où",
+                        "right": "where"
+                      }
+                    ]
+                  },
+                  "tts_text": null,
+                  "tts_lang": null
+                },
+                {
+                  "order_index": 4,
+                  "type": "fill_blank",
+                  "prompt": "Fill in the blank",
+                  "payload": {
+                    "before": "Où est l'",
+                    "after": "?",
+                    "options": [
+                      "hôtel",
+                      "eau",
+                      "pain"
+                    ],
+                    "correct": "hôtel",
+                    "translation": "Where is the hotel?"
+                  },
+                  "tts_text": null,
+                  "tts_lang": null
+                },
+                {
+                  "order_index": 5,
+                  "type": "translate",
+                  "prompt": "Write this in English",
+                  "payload": {
+                    "source_text": "Où est le train ?",
+                    "source_lang": "fr",
+                    "target_lang": "en",
+                    "tokens": [
+                      "Where",
+                      "is",
+                      "the",
+                      "train",
+                      "hotel",
+                      "airport"
+                    ],
+                    "accepted": [
+                      [
+                        "Where",
+                        "is",
+                        "the",
+                        "train"
+                      ]
+                    ]
+                  },
+                  "tts_text": "Où est le train ?",
+                  "tts_lang": "fr-FR"
+                },
+                {
+                  "order_index": 6,
+                  "type": "type_answer",
+                  "prompt": "Type this in French",
+                  "payload": {
+                    "source_text": "The airport",
+                    "target_lang": "fr",
+                    "accepted": [
+                      "L'aéroport"
+                    ]
+                  },
+                  "tts_text": null,
+                  "tts_lang": null
+                },
+                {
+                  "order_index": 7,
+                  "type": "translate",
+                  "prompt": "Write this in French",
+                  "payload": {
+                    "source_text": "Where is the hotel?",
+                    "source_lang": "en",
+                    "target_lang": "fr",
+                    "tokens": [
+                      "Où",
+                      "est",
+                      "l'hôtel",
+                      "le train",
+                      "l'aéroport"
+                    ],
+                    "accepted": [
+                      [
+                        "Où",
+                        "est",
+                        "l'hôtel"
+                      ]
+                    ]
+                  },
+                  "tts_text": null,
+                  "tts_lang": null
+                }
+              ]
+            },
+            {
+              "order_index": 2,
+              "xp_reward": 10,
+              "exercises": [
+                {
+                  "order_index": 1,
+                  "type": "multiple_choice",
+                  "prompt": "Which one of these is “the airport”?",
+                  "payload": {
+                    "question": "Which one of these is “the airport”?",
+                    "options": [
+                      {
+                        "id": "a",
+                        "text": "l'aéroport",
+                        "emoji": "✈"
+                      },
+                      {
+                        "id": "b",
+                        "text": "le train",
+                        "emoji": "🚆"
+                      },
+                      {
+                        "id": "c",
+                        "text": "l'hôtel",
+                        "emoji": "🏨"
+                      }
+                    ],
+                    "correct_option_id": "a"
+                  },
+                  "tts_text": null,
+                  "tts_lang": null
+                },
+                {
+                  "order_index": 2,
+                  "type": "fill_blank",
+                  "prompt": "Fill in the blank",
+                  "payload": {
+                    "before": "Le train va à l'",
+                    "after": "de la ville.",
+                    "options": [
+                      "aéroport",
+                      "pain",
+                      "eau"
+                    ],
+                    "correct": "aéroport",
+                    "translation": "The train goes to the city airport."
+                  },
+                  "tts_text": null,
+                  "tts_lang": null
+                },
+                {
+                  "order_index": 3,
+                  "type": "translate",
+                  "prompt": "Write this in English",
+                  "payload": {
+                    "source_text": "Mon frère est à l'hôtel",
+                    "source_lang": "fr",
+                    "target_lang": "en",
+                    "tokens": [
+                      "My",
+                      "brother",
+                      "is",
+                      "at",
+                      "the",
+                      "hotel",
+                      "train",
+                      "sister"
+                    ],
+                    "accepted": [
+                      [
+                        "My",
+                        "brother",
+                        "is",
+                        "at",
+                        "the",
+                        "hotel"
+                      ]
+                    ]
+                  },
+                  "tts_text": "Mon frère est à l'hôtel",
+                  "tts_lang": "fr-FR"
+                },
+                {
+                  "order_index": 4,
+                  "type": "match_pairs",
+                  "prompt": "Tap the matching pairs",
+                  "payload": {
+                    "pairs": [
+                      {
+                        "left": "le train",
+                        "right": "the train"
+                      },
+                      {
+                        "left": "l'aéroport",
+                        "right": "the airport"
+                      },
+                      {
+                        "left": "la ville",
+                        "right": "the city"
+                      },
+                      {
+                        "left": "l'hôtel",
+                        "right": "the hotel"
+                      },
+                      {
+                        "left": "est",
+                        "right": "is"
+                      }
+                    ]
+                  },
+                  "tts_text": null,
+                  "tts_lang": null
+                },
+                {
+                  "order_index": 5,
+                  "type": "type_answer",
+                  "prompt": "Type this in French",
+                  "payload": {
+                    "source_text": "Where is the train?",
+                    "target_lang": "fr",
+                    "accepted": [
+                      "Où est le train ?",
+                      "Où est le train"
+                    ]
+                  },
+                  "tts_text": null,
+                  "tts_lang": null
+                },
+                {
+                  "order_index": 6,
+                  "type": "multiple_choice",
+                  "prompt": "Which sentence means “The hotel is in the city”?",
+                  "payload": {
+                    "question": "Which sentence means “The hotel is in the city”?",
+                    "options": [
+                      {
+                        "id": "a",
+                        "text": "L'hôtel est dans la ville",
+                        "emoji": null
+                      },
+                      {
+                        "id": "b",
+                        "text": "L'hôtel est dans le train",
+                        "emoji": null
+                      },
+                      {
+                        "id": "c",
+                        "text": "La ville est dans l'hôtel",
+                        "emoji": null
+                      }
+                    ],
+                    "correct_option_id": "a"
+                  },
+                  "tts_text": null,
+                  "tts_lang": null
+                }
+              ]
+            },
+            {
+              "order_index": 3,
+              "xp_reward": 10,
+              "exercises": [
+                {
+                  "order_index": 1,
+                  "type": "translate",
+                  "prompt": "Write this in French",
+                  "payload": {
+                    "source_text": "Where is the airport?",
+                    "source_lang": "en",
+                    "target_lang": "fr",
+                    "tokens": [
+                      "Où",
+                      "est",
+                      "l'aéroport",
+                      "l'hôtel",
+                      "le train"
+                    ],
+                    "accepted": [
+                      [
+                        "Où",
+                        "est",
+                        "l'aéroport"
+                      ]
+                    ]
+                  },
+                  "tts_text": null,
+                  "tts_lang": null
+                },
+                {
+                  "order_index": 2,
+                  "type": "fill_blank",
+                  "prompt": "Fill in the blank",
+                  "payload": {
+                    "before": "Ma mère est dans le",
+                    "after": "pour Paris.",
+                    "options": [
+                      "train",
+                      "eau",
+                      "pain"
+                    ],
+                    "correct": "train",
+                    "translation": "My mother is on the train to Paris."
+                  },
+                  "tts_text": null,
+                  "tts_lang": null
+                },
+                {
+                  "order_index": 3,
+                  "type": "multiple_choice",
+                  "prompt": "Which one of these is “the city”?",
+                  "payload": {
+                    "question": "Which one of these is “the city”?",
+                    "options": [
+                      {
+                        "id": "a",
+                        "text": "la ville",
+                        "emoji": "🏙"
+                      },
+                      {
+                        "id": "b",
+                        "text": "l'hôtel",
+                        "emoji": "🏨"
+                      },
+                      {
+                        "id": "c",
+                        "text": "le train",
+                        "emoji": "🚆"
+                      }
+                    ],
+                    "correct_option_id": "a"
+                  },
+                  "tts_text": null,
+                  "tts_lang": null
+                },
+                {
+                  "order_index": 4,
+                  "type": "match_pairs",
+                  "prompt": "Tap the matching pairs",
+                  "payload": {
+                    "pairs": [
+                      {
+                        "left": "où est ?",
+                        "right": "where is?"
+                      },
+                      {
+                        "left": "l'hôtel",
+                        "right": "the hotel"
+                      },
+                      {
+                        "left": "l'aéroport",
+                        "right": "the airport"
+                      },
+                      {
+                        "left": "la ville",
+                        "right": "the city"
+                      },
+                      {
+                        "left": "le train",
+                        "right": "the train"
+                      }
+                    ]
+                  },
+                  "tts_text": null,
+                  "tts_lang": null
+                },
+                {
+                  "order_index": 5,
+                  "type": "type_answer",
+                  "prompt": "Type this in French",
+                  "payload": {
+                    "source_text": "The train",
+                    "target_lang": "fr",
+                    "accepted": [
+                      "Le train"
+                    ]
+                  },
+                  "tts_text": null,
+                  "tts_lang": null
+                },
+                {
+                  "order_index": 6,
+                  "type": "translate",
+                  "prompt": "Write this in English",
+                  "payload": {
+                    "source_text": "La ville est grande",
+                    "source_lang": "fr",
+                    "target_lang": "en",
+                    "tokens": [
+                      "The",
+                      "city",
+                      "is",
+                      "big",
+                      "small",
+                      "train"
+                    ],
+                    "accepted": [
+                      [
+                        "The",
+                        "city",
+                        "is",
+                        "big"
+                      ]
+                    ]
+                  },
+                  "tts_text": "La ville est grande",
+                  "tts_lang": "fr-FR"
+                },
+                {
+                  "order_index": 7,
+                  "type": "multiple_choice",
+                  "prompt": "Which sentence means “Where is my family?”",
+                  "payload": {
+                    "question": "Which sentence means “Where is my family?”",
+                    "options": [
+                      {
+                        "id": "a",
+                        "text": "Où est ma famille ?",
+                        "emoji": null
+                      },
+                      {
+                        "id": "b",
+                        "text": "Où est mon frère ?",
+                        "emoji": null
+                      },
+                      {
+                        "id": "c",
+                        "text": "Où est l'hôtel ?",
+                        "emoji": null
+                      }
+                    ],
+                    "correct_option_id": "a"
+                  },
+                  "tts_text": null,
+                  "tts_lang": null
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "order_index": 2,
+          "title": "Colours & Clothes",
+          "icon": "Shirt",
+          "lessons": [
+            {
+              "order_index": 1,
+              "xp_reward": 10,
+              "exercises": [
+                {
+                  "order_index": 1,
+                  "type": "multiple_choice",
+                  "prompt": "Which one of these is “red”?",
+                  "payload": {
+                    "question": "Which one of these is “red”?",
+                    "options": [
+                      {
+                        "id": "a",
+                        "text": "rouge",
+                        "emoji": "🔴"
+                      },
+                      {
+                        "id": "b",
+                        "text": "bleu",
+                        "emoji": "🔵"
+                      },
+                      {
+                        "id": "c",
+                        "text": "vert",
+                        "emoji": "🟢"
+                      }
+                    ],
+                    "correct_option_id": "a"
+                  },
+                  "tts_text": null,
+                  "tts_lang": null
+                },
+                {
+                  "order_index": 2,
+                  "type": "multiple_choice",
+                  "prompt": "Which one of these is “blue”?",
+                  "payload": {
+                    "question": "Which one of these is “blue”?",
+                    "options": [
+                      {
+                        "id": "a",
+                        "text": "bleu",
+                        "emoji": "🔵"
+                      },
+                      {
+                        "id": "b",
+                        "text": "vert",
+                        "emoji": "🟢"
+                      },
+                      {
+                        "id": "c",
+                        "text": "rouge",
+                        "emoji": "🔴"
+                      }
+                    ],
+                    "correct_option_id": "a"
+                  },
+                  "tts_text": null,
+                  "tts_lang": null
+                },
+                {
+                  "order_index": 3,
+                  "type": "match_pairs",
+                  "prompt": "Tap the matching pairs",
+                  "payload": {
+                    "pairs": [
+                      {
+                        "left": "rouge",
+                        "right": "red"
+                      },
+                      {
+                        "left": "bleu",
+                        "right": "blue"
+                      },
+                      {
+                        "left": "vert",
+                        "right": "green"
+                      },
+                      {
+                        "left": "la chemise",
+                        "right": "the shirt"
+                      },
+                      {
+                        "left": "les chaussures",
+                        "right": "the shoes"
+                      }
+                    ]
+                  },
+                  "tts_text": null,
+                  "tts_lang": null
+                },
+                {
+                  "order_index": 4,
+                  "type": "fill_blank",
+                  "prompt": "Fill in the blank",
+                  "payload": {
+                    "before": "Les pommes sont",
+                    "after": "et sucrées.",
+                    "options": [
+                      "rouges",
+                      "rouge",
+                      "rougir"
+                    ],
+                    "correct": "rouges",
+                    "translation": "The apples are red and sweet."
+                  },
+                  "tts_text": null,
+                  "tts_lang": null
+                },
+                {
+                  "order_index": 5,
+                  "type": "translate",
+                  "prompt": "Write this in English",
+                  "payload": {
+                    "source_text": "La chemise est bleue",
+                    "source_lang": "fr",
+                    "target_lang": "en",
+                    "tokens": [
+                      "The",
+                      "shirt",
+                      "is",
+                      "blue",
+                      "red",
+                      "green"
+                    ],
+                    "accepted": [
+                      [
+                        "The",
+                        "shirt",
+                        "is",
+                        "blue"
+                      ]
+                    ]
+                  },
+                  "tts_text": "La chemise est bleue",
+                  "tts_lang": "fr-FR"
+                },
+                {
+                  "order_index": 6,
+                  "type": "type_answer",
+                  "prompt": "Type this in French",
+                  "payload": {
+                    "source_text": "The shoes",
+                    "target_lang": "fr",
+                    "accepted": [
+                      "Les chaussures"
+                    ]
+                  },
+                  "tts_text": null,
+                  "tts_lang": null
+                },
+                {
+                  "order_index": 7,
+                  "type": "translate",
+                  "prompt": "Write this in French",
+                  "payload": {
+                    "source_text": "The shirt is green",
+                    "source_lang": "en",
+                    "target_lang": "fr",
+                    "tokens": [
+                      "La",
+                      "chemise",
+                      "est",
+                      "verte",
+                      "rouge",
+                      "bleue"
+                    ],
+                    "accepted": [
+                      [
+                        "La",
+                        "chemise",
+                        "est",
+                        "verte"
+                      ]
+                    ]
+                  },
+                  "tts_text": null,
+                  "tts_lang": null
+                }
+              ]
+            },
+            {
+              "order_index": 2,
+              "xp_reward": 10,
+              "exercises": [
+                {
+                  "order_index": 1,
+                  "type": "multiple_choice",
+                  "prompt": "Which one of these is “green”?",
+                  "payload": {
+                    "question": "Which one of these is “green”?",
+                    "options": [
+                      {
+                        "id": "a",
+                        "text": "vert",
+                        "emoji": "🟢"
+                      },
+                      {
+                        "id": "b",
+                        "text": "rouge",
+                        "emoji": "🔴"
+                      },
+                      {
+                        "id": "c",
+                        "text": "bleu",
+                        "emoji": "🔵"
+                      }
+                    ],
+                    "correct_option_id": "a"
+                  },
+                  "tts_text": null,
+                  "tts_lang": null
+                },
+                {
+                  "order_index": 2,
+                  "type": "fill_blank",
+                  "prompt": "Fill in the blank",
+                  "payload": {
+                    "before": "Les chaussures sont",
+                    "after": "et neuves.",
+                    "options": [
+                      "bleues",
+                      "bleue",
+                      "bleu"
+                    ],
+                    "correct": "bleues",
+                    "translation": "The shoes are blue and new."
+                  },
+                  "tts_text": null,
+                  "tts_lang": null
+                },
+                {
+                  "order_index": 3,
+                  "type": "translate",
+                  "prompt": "Write this in English",
+                  "payload": {
+                    "source_text": "Mes chaussures sont rouges",
+                    "source_lang": "fr",
+                    "target_lang": "en",
+                    "tokens": [
+                      "My",
+                      "shoes",
+                      "are",
+                      "red",
+                      "blue",
+                      "shirt"
+                    ],
+                    "accepted": [
+                      [
+                        "My",
+                        "shoes",
+                        "are",
+                        "red"
+                      ]
+                    ]
+                  },
+                  "tts_text": "Mes chaussures sont rouges",
+                  "tts_lang": "fr-FR"
+                },
+                {
+                  "order_index": 4,
+                  "type": "match_pairs",
+                  "prompt": "Tap the matching pairs",
+                  "payload": {
+                    "pairs": [
+                      {
+                        "left": "la chemise",
+                        "right": "the shirt"
+                      },
+                      {
+                        "left": "les chaussures",
+                        "right": "the shoes"
+                      },
+                      {
+                        "left": "rouge",
+                        "right": "red"
+                      },
+                      {
+                        "left": "bleu",
+                        "right": "blue"
+                      },
+                      {
+                        "left": "vert",
+                        "right": "green"
+                      }
+                    ]
+                  },
+                  "tts_text": null,
+                  "tts_lang": null
+                },
+                {
+                  "order_index": 5,
+                  "type": "type_answer",
+                  "prompt": "Type this in French",
+                  "payload": {
+                    "source_text": "The shirt is red",
+                    "target_lang": "fr",
+                    "accepted": [
+                      "La chemise est rouge"
+                    ]
+                  },
+                  "tts_text": null,
+                  "tts_lang": null
+                },
+                {
+                  "order_index": 6,
+                  "type": "multiple_choice",
+                  "prompt": "Which one of these is “the shirt”?",
+                  "payload": {
+                    "question": "Which one of these is “the shirt”?",
+                    "options": [
+                      {
+                        "id": "a",
+                        "text": "la chemise",
+                        "emoji": "👕"
+                      },
+                      {
+                        "id": "b",
+                        "text": "les chaussures",
+                        "emoji": "👟"
+                      },
+                      {
+                        "id": "c",
+                        "text": "le lait",
+                        "emoji": "🥛"
+                      }
+                    ],
+                    "correct_option_id": "a"
+                  },
+                  "tts_text": null,
+                  "tts_lang": null
+                }
+              ]
+            },
+            {
+              "order_index": 3,
+              "xp_reward": 10,
+              "exercises": [
+                {
+                  "order_index": 1,
+                  "type": "translate",
+                  "prompt": "Write this in French",
+                  "payload": {
+                    "source_text": "My shoes are green",
+                    "source_lang": "en",
+                    "target_lang": "fr",
+                    "tokens": [
+                      "Mes",
+                      "chaussures",
+                      "sont",
+                      "vertes",
+                      "rouge",
+                      "bleue"
+                    ],
+                    "accepted": [
+                      [
+                        "Mes",
+                        "chaussures",
+                        "sont",
+                        "vertes"
+                      ]
+                    ]
+                  },
+                  "tts_text": null,
+                  "tts_lang": null
+                },
+                {
+                  "order_index": 2,
+                  "type": "fill_blank",
+                  "prompt": "Fill in the blank",
+                  "payload": {
+                    "before": "Ma sœur a une chemise",
+                    "after": "très jolie.",
+                    "options": [
+                      "verte",
+                      "vert",
+                      "vertes"
+                    ],
+                    "correct": "verte",
+                    "translation": "My sister has a very pretty green shirt."
+                  },
+                  "tts_text": null,
+                  "tts_lang": null
+                },
+                {
+                  "order_index": 3,
+                  "type": "multiple_choice",
+                  "prompt": "Which sentence means “The shoes are red”?",
+                  "payload": {
+                    "question": "Which sentence means “The shoes are red”?",
+                    "options": [
+                      {
+                        "id": "a",
+                        "text": "Les chaussures sont rouges",
+                        "emoji": null
+                      },
+                      {
+                        "id": "b",
+                        "text": "La chemise est rouge",
+                        "emoji": null
+                      },
+                      {
+                        "id": "c",
+                        "text": "Les chaussures sont bleues",
+                        "emoji": null
+                      }
+                    ],
+                    "correct_option_id": "a"
+                  },
+                  "tts_text": null,
+                  "tts_lang": null
+                },
+                {
+                  "order_index": 4,
+                  "type": "match_pairs",
+                  "prompt": "Tap the matching pairs",
+                  "payload": {
+                    "pairs": [
+                      {
+                        "left": "la chemise rouge",
+                        "right": "the red shirt"
+                      },
+                      {
+                        "left": "les chaussures bleues",
+                        "right": "the blue shoes"
+                      },
+                      {
+                        "left": "la pomme verte",
+                        "right": "the green apple"
+                      },
+                      {
+                        "left": "le train rouge",
+                        "right": "the red train"
+                      },
+                      {
+                        "left": "le lait",
+                        "right": "the milk"
+                      }
+                    ]
+                  },
+                  "tts_text": null,
+                  "tts_lang": null
+                },
+                {
+                  "order_index": 5,
+                  "type": "type_answer",
+                  "prompt": "Type this in French",
+                  "payload": {
+                    "source_text": "Blue",
+                    "target_lang": "fr",
+                    "accepted": [
+                      "Bleu"
+                    ]
+                  },
+                  "tts_text": null,
+                  "tts_lang": null
+                },
+                {
+                  "order_index": 6,
+                  "type": "translate",
+                  "prompt": "Write this in English",
+                  "payload": {
+                    "source_text": "Mon père a une chemise bleue",
+                    "source_lang": "fr",
+                    "target_lang": "en",
+                    "tokens": [
+                      "My",
+                      "father",
+                      "has",
+                      "a",
+                      "blue",
+                      "shirt",
+                      "green",
+                      "shoes"
+                    ],
+                    "accepted": [
+                      [
+                        "My",
+                        "father",
+                        "has",
+                        "a",
+                        "blue",
+                        "shirt"
+                      ]
+                    ]
+                  },
+                  "tts_text": "Mon père a une chemise bleue",
+                  "tts_lang": "fr-FR"
+                },
+                {
+                  "order_index": 7,
+                  "type": "multiple_choice",
+                  "prompt": "Which one of these is “the shoes”?",
+                  "payload": {
+                    "question": "Which one of these is “the shoes”?",
+                    "options": [
+                      {
+                        "id": "a",
+                        "text": "les chaussures",
+                        "emoji": "👟"
+                      },
+                      {
+                        "id": "b",
+                        "text": "la chemise",
+                        "emoji": "👕"
+                      },
+                      {
+                        "id": "c",
+                        "text": "le pain",
+                        "emoji": "🍞"
+                      }
+                    ],
+                    "correct_option_id": "a"
+                  },
+                  "tts_text": null,
+                  "tts_lang": null
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "order_index": 3,
+          "title": "Animals",
+          "icon": "Dog",
+          "lessons": [
+            {
+              "order_index": 1,
+              "xp_reward": 10,
+              "exercises": [
+                {
+                  "order_index": 1,
+                  "type": "multiple_choice",
+                  "prompt": "Which one of these is “the dog”?",
+                  "payload": {
+                    "question": "Which one of these is “the dog”?",
+                    "options": [
+                      {
+                        "id": "a",
+                        "text": "le chien",
+                        "emoji": "🐶"
+                      },
+                      {
+                        "id": "b",
+                        "text": "le chat",
+                        "emoji": "🐱"
+                      },
+                      {
+                        "id": "c",
+                        "text": "l'oiseau",
+                        "emoji": "🐦"
+                      }
+                    ],
+                    "correct_option_id": "a"
+                  },
+                  "tts_text": null,
+                  "tts_lang": null
+                },
+                {
+                  "order_index": 2,
+                  "type": "multiple_choice",
+                  "prompt": "Which one of these is “the cat”?",
+                  "payload": {
+                    "question": "Which one of these is “the cat”?",
+                    "options": [
+                      {
+                        "id": "a",
+                        "text": "le chat",
+                        "emoji": "🐱"
+                      },
+                      {
+                        "id": "b",
+                        "text": "le cheval",
+                        "emoji": "🐴"
+                      },
+                      {
+                        "id": "c",
+                        "text": "le chien",
+                        "emoji": "🐶"
+                      }
+                    ],
+                    "correct_option_id": "a"
+                  },
+                  "tts_text": null,
+                  "tts_lang": null
+                },
+                {
+                  "order_index": 3,
+                  "type": "match_pairs",
+                  "prompt": "Tap the matching pairs",
+                  "payload": {
+                    "pairs": [
+                      {
+                        "left": "le chien",
+                        "right": "the dog"
+                      },
+                      {
+                        "left": "le chat",
+                        "right": "the cat"
+                      },
+                      {
+                        "left": "l'oiseau",
+                        "right": "the bird"
+                      },
+                      {
+                        "left": "le cheval",
+                        "right": "the horse"
+                      },
+                      {
+                        "left": "l'eau",
+                        "right": "the water"
+                      }
+                    ]
+                  },
+                  "tts_text": null,
+                  "tts_lang": null
+                },
+                {
+                  "order_index": 4,
+                  "type": "fill_blank",
+                  "prompt": "Fill in the blank",
+                  "payload": {
+                    "before": "Le",
+                    "after": "boit de l'eau.",
+                    "options": [
+                      "chien",
+                      "pain",
+                      "chaussures"
+                    ],
+                    "correct": "chien",
+                    "translation": "The dog drinks water."
+                  },
+                  "tts_text": null,
+                  "tts_lang": null
+                },
+                {
+                  "order_index": 5,
+                  "type": "translate",
+                  "prompt": "Write this in English",
+                  "payload": {
+                    "source_text": "Le chat boit du lait",
+                    "source_lang": "fr",
+                    "target_lang": "en",
+                    "tokens": [
+                      "The",
+                      "cat",
+                      "drinks",
+                      "milk",
+                      "eats",
+                      "bread"
+                    ],
+                    "accepted": [
+                      [
+                        "The",
+                        "cat",
+                        "drinks",
+                        "milk"
+                      ]
+                    ]
+                  },
+                  "tts_text": "Le chat boit du lait",
+                  "tts_lang": "fr-FR"
+                },
+                {
+                  "order_index": 6,
+                  "type": "type_answer",
+                  "prompt": "Type this in French",
+                  "payload": {
+                    "source_text": "The bird",
+                    "target_lang": "fr",
+                    "accepted": [
+                      "L'oiseau"
+                    ]
+                  },
+                  "tts_text": null,
+                  "tts_lang": null
+                },
+                {
+                  "order_index": 7,
+                  "type": "translate",
+                  "prompt": "Write this in French",
+                  "payload": {
+                    "source_text": "The horse eats an apple",
+                    "source_lang": "en",
+                    "target_lang": "fr",
+                    "tokens": [
+                      "Le",
+                      "cheval",
+                      "mange",
+                      "une",
+                      "pomme",
+                      "chien",
+                      "boit"
+                    ],
+                    "accepted": [
+                      [
+                        "Le",
+                        "cheval",
+                        "mange",
+                        "une",
+                        "pomme"
+                      ]
+                    ]
+                  },
+                  "tts_text": null,
+                  "tts_lang": null
+                }
+              ]
+            },
+            {
+              "order_index": 2,
+              "xp_reward": 10,
+              "exercises": [
+                {
+                  "order_index": 1,
+                  "type": "multiple_choice",
+                  "prompt": "Which one of these is “the horse”?",
+                  "payload": {
+                    "question": "Which one of these is “the horse”?",
+                    "options": [
+                      {
+                        "id": "a",
+                        "text": "le cheval",
+                        "emoji": "🐴"
+                      },
+                      {
+                        "id": "b",
+                        "text": "le chien",
+                        "emoji": "🐶"
+                      },
+                      {
+                        "id": "c",
+                        "text": "l'oiseau",
+                        "emoji": "🐦"
+                      }
+                    ],
+                    "correct_option_id": "a"
+                  },
+                  "tts_text": null,
+                  "tts_lang": null
+                },
+                {
+                  "order_index": 2,
+                  "type": "fill_blank",
+                  "prompt": "Fill in the blank",
+                  "payload": {
+                    "before": "L'oiseau est",
+                    "after": "et petit.",
+                    "options": [
+                      "bleu",
+                      "bleue",
+                      "bleus"
+                    ],
+                    "correct": "bleu",
+                    "translation": "The bird is blue and small."
+                  },
+                  "tts_text": null,
+                  "tts_lang": null
+                },
+                {
+                  "order_index": 3,
+                  "type": "translate",
+                  "prompt": "Write this in English",
+                  "payload": {
+                    "source_text": "Ma sœur a un chat",
+                    "source_lang": "fr",
+                    "target_lang": "en",
+                    "tokens": [
+                      "My",
+                      "sister",
+                      "has",
+                      "a",
+                      "cat",
+                      "dog",
+                      "brother"
+                    ],
+                    "accepted": [
+                      [
+                        "My",
+                        "sister",
+                        "has",
+                        "a",
+                        "cat"
+                      ]
+                    ]
+                  },
+                  "tts_text": "Ma sœur a un chat",
+                  "tts_lang": "fr-FR"
+                },
+                {
+                  "order_index": 4,
+                  "type": "match_pairs",
+                  "prompt": "Tap the matching pairs",
+                  "payload": {
+                    "pairs": [
+                      {
+                        "left": "le cheval",
+                        "right": "the horse"
+                      },
+                      {
+                        "left": "l'oiseau",
+                        "right": "the bird"
+                      },
+                      {
+                        "left": "le chat",
+                        "right": "the cat"
+                      },
+                      {
+                        "left": "le chien",
+                        "right": "the dog"
+                      },
+                      {
+                        "left": "la famille",
+                        "right": "the family"
+                      }
+                    ]
+                  },
+                  "tts_text": null,
+                  "tts_lang": null
+                },
+                {
+                  "order_index": 5,
+                  "type": "type_answer",
+                  "prompt": "Type this in French",
+                  "payload": {
+                    "source_text": "The cat",
+                    "target_lang": "fr",
+                    "accepted": [
+                      "Le chat"
+                    ]
+                  },
+                  "tts_text": null,
+                  "tts_lang": null
+                },
+                {
+                  "order_index": 6,
+                  "type": "multiple_choice",
+                  "prompt": "Which sentence means “The dog eats bread”?",
+                  "payload": {
+                    "question": "Which sentence means “The dog eats bread”?",
+                    "options": [
+                      {
+                        "id": "a",
+                        "text": "Le chien mange du pain",
+                        "emoji": null
+                      },
+                      {
+                        "id": "b",
+                        "text": "Le chat mange du pain",
+                        "emoji": null
+                      },
+                      {
+                        "id": "c",
+                        "text": "Le chien boit du pain",
+                        "emoji": null
+                      }
+                    ],
+                    "correct_option_id": "a"
+                  },
+                  "tts_text": null,
+                  "tts_lang": null
+                }
+              ]
+            },
+            {
+              "order_index": 3,
+              "xp_reward": 10,
+              "exercises": [
+                {
+                  "order_index": 1,
+                  "type": "translate",
+                  "prompt": "Write this in French",
+                  "payload": {
+                    "source_text": "Where is my dog?",
+                    "source_lang": "en",
+                    "target_lang": "fr",
+                    "tokens": [
+                      "Où",
+                      "est",
+                      "mon",
+                      "chien",
+                      "chat",
+                      "cheval"
+                    ],
+                    "accepted": [
+                      [
+                        "Où",
+                        "est",
+                        "mon",
+                        "chien"
+                      ]
+                    ]
+                  },
+                  "tts_text": null,
+                  "tts_lang": null
+                },
+                {
+                  "order_index": 2,
+                  "type": "fill_blank",
+                  "prompt": "Fill in the blank",
+                  "payload": {
+                    "before": "Mon père a un",
+                    "after": "vert.",
+                    "options": [
+                      "oiseau",
+                      "chemise",
+                      "pomme"
+                    ],
+                    "correct": "oiseau",
+                    "translation": "My father has a green bird."
+                  },
+                  "tts_text": null,
+                  "tts_lang": null
+                },
+                {
+                  "order_index": 3,
+                  "type": "multiple_choice",
+                  "prompt": "Which one of these is “the bird”?",
+                  "payload": {
+                    "question": "Which one of these is “the bird”?",
+                    "options": [
+                      {
+                        "id": "a",
+                        "text": "l'oiseau",
+                        "emoji": "🐦"
+                      },
+                      {
+                        "id": "b",
+                        "text": "le chat",
+                        "emoji": "🐱"
+                      },
+                      {
+                        "id": "c",
+                        "text": "le cheval",
+                        "emoji": "🐴"
+                      }
+                    ],
+                    "correct_option_id": "a"
+                  },
+                  "tts_text": null,
+                  "tts_lang": null
+                },
+                {
+                  "order_index": 4,
+                  "type": "match_pairs",
+                  "prompt": "Tap the matching pairs",
+                  "payload": {
+                    "pairs": [
+                      {
+                        "left": "mon chien",
+                        "right": "my dog"
+                      },
+                      {
+                        "left": "ton chat",
+                        "right": "your cat"
+                      },
+                      {
+                        "left": "le cheval",
+                        "right": "the horse"
+                      },
+                      {
+                        "left": "l'oiseau",
+                        "right": "the bird"
+                      },
+                      {
+                        "left": "les chaussures",
+                        "right": "the shoes"
+                      }
+                    ]
+                  },
+                  "tts_text": null,
+                  "tts_lang": null
+                },
+                {
+                  "order_index": 5,
+                  "type": "type_answer",
+                  "prompt": "Type this in French",
+                  "payload": {
+                    "source_text": "My horse drinks water",
+                    "target_lang": "fr",
+                    "accepted": [
+                      "Mon cheval boit de l'eau"
+                    ]
+                  },
+                  "tts_text": null,
+                  "tts_lang": null
+                },
+                {
+                  "order_index": 6,
+                  "type": "translate",
+                  "prompt": "Write this in English",
+                  "payload": {
+                    "source_text": "Le cheval est dans la ville",
+                    "source_lang": "fr",
+                    "target_lang": "en",
+                    "tokens": [
+                      "The",
+                      "horse",
+                      "is",
+                      "in",
+                      "the",
+                      "city",
+                      "hotel",
+                      "train"
+                    ],
+                    "accepted": [
+                      [
+                        "The",
+                        "horse",
+                        "is",
+                        "in",
+                        "the",
+                        "city"
+                      ]
+                    ]
+                  },
+                  "tts_text": "Le cheval est dans la ville",
+                  "tts_lang": "fr-FR"
+                },
+                {
+                  "order_index": 7,
+                  "type": "multiple_choice",
+                  "prompt": "Which sentence means “The cat is in the hotel”?",
+                  "payload": {
+                    "question": "Which sentence means “The cat is in the hotel”?",
+                    "options": [
+                      {
+                        "id": "a",
+                        "text": "Le chat est dans l'hôtel",
+                        "emoji": null
+                      },
+                      {
+                        "id": "b",
+                        "text": "Le chien est dans l'hôtel",
+                        "emoji": null
+                      },
+                      {
+                        "id": "c",
+                        "text": "Le chat est dans le train",
+                        "emoji": null
+                      }
+                    ],
+                    "correct_option_id": "a"
+                  },
+                  "tts_text": null,
+                  "tts_lang": null
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

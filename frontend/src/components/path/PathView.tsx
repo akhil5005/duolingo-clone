@@ -87,9 +87,15 @@ export function PathView({ path }: { path: LearningPath }) {
   }, [units]);
 
   useEffect(() => {
-    if (hasScrolled.current || !currentNodeRef.current) return;
+    const node = currentNodeRef.current;
+    if (hasScrolled.current || !node) return;
     hasScrolled.current = true;
-    currentNodeRef.current.scrollIntoView({ block: "center", behavior: "smooth" });
+    // Only chase the node if it is actually off screen. On a fresh course it is
+    // already near the top, and centring it would tuck it under the sticky
+    // unit banner.
+    if (node.getBoundingClientRect().bottom > window.innerHeight * 0.75) {
+      node.scrollIntoView({ block: "center", behavior: "smooth" });
+    }
   }, [currentSkillId]);
 
   return (

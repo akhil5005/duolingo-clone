@@ -11,7 +11,7 @@ export function RightRail() {
   const { data: me } = useMe();
 
   return (
-    <aside className="sticky top-0 hidden h-screen w-[368px] shrink-0 space-y-4 overflow-y-auto px-6 py-6 xl:block">
+    <aside className="sticky top-0 hidden h-screen w-[368px] shrink-0 space-y-4 px-6 py-6 xl:block">
       <StatsRow align="right" />
       {me ? <DailyGoalCard me={me} /> : <Skeleton className="h-36 w-full" />}
       <LeaderboardPreviewCard />

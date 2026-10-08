@@ -1,9 +1,10 @@
 # lingoleap
 
-A functional Duolingo-style web app. Follow a skill path, play lessons built from five kinds of
-interactive exercise, earn XP, keep a daily streak alive, spend hearts when you get things wrong
-and climb a weekly league. Next.js on the front, FastAPI + SQLite on the back, every rule
-enforced on the server.
+A functional Duolingo-style web app. Pick a course, follow its skill path, play lessons built
+from five kinds of interactive exercise, earn XP, keep a daily streak alive, spend hearts when
+you get things wrong and climb a weekly league. Two full courses are seeded — Spanish and
+French — and you can switch between them without losing progress in either. Next.js on the
+front, FastAPI + SQLite on the back, every rule enforced on the server.
 
 - **Live demo:** https://duolingo-clone-rho-bice.vercel.app
 - **API docs (OpenAPI):** https://duolingo-clone-w9sh.onrender.com/docs
@@ -37,14 +38,17 @@ enforced on the server.
 - **Gamification** — daily streak with real day logic (plus a simulate-a-day tool), XP totals,
   a seeded weekly league, lazy heart regeneration with a gem refill and a practice mode that
   earns hearts back, a daily XP goal, and everything persisted per learner.
-- **Content management** — the whole course (units, skills, lessons, exercises) lives in the
-  database and is seeded on first boot; a profile page shows streak, XP and achievements.
+- **Content management** — all course content (units, skills, lessons, exercises) lives in the
+  database and is seeded on first boot from one JSON file per course; a profile page shows
+  streak, XP and achievements.
 - **Duolingo feel** — 3D press-down buttons, rounded bold type, an original mascot with five
   expressions, animated feedback, modals, toasts, confetti and celebratory end screens.
 
 ### Bonus
 
-- Text-to-speech on Spanish prompts (browser speech synthesis — no audio files shipped)
+- **Two full courses** — Spanish and French, 120 exercises each, with a course switcher in the
+  header. Progress is tracked per course; XP, hearts, gems and the streak follow the learner.
+- Text-to-speech on Spanish and French prompts (browser speech synthesis — no audio files shipped)
 - Eight achievements with live progress bars
 - A real leaderboard computed from the XP ledger across 15 seeded learners
 - Legendary challenge mode (15 exercises, one mistake ends it)
@@ -53,8 +57,8 @@ enforced on the server.
 
 ### Deliberately mocked (marked "Coming soon" in the UI)
 
-Speech recognition, in-app purchases and Super, friends and social features, extra languages.
-Authentication is simplified to a single default learner.
+Speech recognition, in-app purchases and Super, friends and social features. Authentication is
+simplified to a single default learner.
 
 ## Tech stack
 
@@ -99,7 +103,7 @@ backend/app/
 ├── repositories/     # database access only, no rules
 ├── services/         # the game: path, lessons, sessions, hearts, streak, XP, achievements
 ├── api/routes/       # thin HTTP layer
-└── seed/             # the Spanish course as JSON + the idempotent seeder
+└── seed/             # one JSON file per course + the idempotent seeder
 
 frontend/src/
 ├── app/              # routes: (main) shell pages and the full-screen lesson player
@@ -287,9 +291,10 @@ Interactive docs at `/docs` on the backend host.
 | --- | --- | --- |
 | `GET` | `/health` | Liveness probe for Render |
 | `GET` | `/api/me` | Header state: XP, gems, hearts (regen applied), streak, daily goal, week activity |
-| `PATCH` | `/api/me` | Update display name, daily goal or sound |
+| `PATCH` | `/api/me` | Update display name, daily goal, sound, or switch course |
 | `POST` | `/api/me/hearts/refill` | Buy a full set of hearts for 350 gems (`402` if short) |
-| `GET` | `/api/path` | The whole course with derived skill states and the next lesson id |
+| `GET` | `/api/path` | The current course with derived skill states and the next lesson id |
+| `GET` | `/api/courses` | The catalogue, with per-course skill progress and which one is active |
 | `POST` | `/api/lessons/{lesson_id}/sessions` | Start a lesson (`409` if locked or out of hearts) |
 | `POST` | `/api/skills/{skill_id}/practice` | Practice run; `skill_id = 0` means "anything I have started" |
 | `POST` | `/api/skills/{skill_id}/legendary` | Legendary challenge over a finished skill |
@@ -311,8 +316,9 @@ hearts, wrong exercise, finished session) and `422` for validation.
 `APP_TIMEZONE` plus a `day_offset` persisted in `app_state`. Because every rule reads it,
 "Simulate next day" exercises the real streak and heart logic rather than a mock.
 
-**Progression.** The first skill is always available; skill *n+1* unlocks when skill *n* is
-complete. A skill is `locked`, `available` (nothing done), `in_progress` or `completed`.
+**Progression.** Within a course the first skill is always available; skill *n+1* unlocks when
+skill *n* is complete. A skill is `locked`, `available` (nothing done), `in_progress` or
+`completed`. Because progress hangs off the skill, each course keeps its own.
 
 **Sessions.** Starting a lesson stores its exercise ids as a queue. Each answer must target the
 head of that queue. A correct answer pops it; a wrong one pops it and pushes it to the back, so
@@ -496,7 +502,12 @@ Vercel → **Add New** → **Project** → import the same repository.
   once every tile has a partner. A wrong mapping costs one heart, not one per pair.
 - **No speech recognition.** Pronunciation exercises are a "Coming soon" placeholder.
   Text-to-speech uses the browser's own voices, so quality varies by device.
-- **One language.** Spanish for English speakers: 2 units, 6 skills, 18 lessons, 120 exercises.
+- **Two courses, both from English.** Spanish and French, each 2 units, 6 skills, 18 lessons
+  and 120 exercises. Adding a third is a new `*_course.json` beside the others — the seeder
+  picks up every file it finds, and nothing else changes.
+- **Progress is per course, everything else is global.** Switching course changes which path
+  you see; XP, hearts, gems, the streak and the league follow the learner, which is how
+  Duolingo treats them.
 - **Original assets only.** The mascot ("Lingo"), the wordmark, the league badge and the chest
   are drawn from scratch as inline SVG. Nunito stands in for Duolingo's proprietary typeface.
   No Duolingo trademarks, artwork or sounds are used.
@@ -510,6 +521,7 @@ Vercel → **Add New** → **Project** → import the same repository.
 - Spaced repetition: weight practice towards exercises the learner has recently failed, using
   the `session_answers` history that is already recorded
 - Real leagues — shard learners into cohorts of thirty with weekly promotion and relegation
+- More courses: the content pipeline already takes any number of `*_course.json` files
 - Recorded audio per exercise instead of browser speech synthesis
 - Server-side rendering with authenticated data once there is a real session cookie
 
