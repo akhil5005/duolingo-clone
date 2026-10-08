@@ -5,8 +5,8 @@ interactive exercise, earn XP, keep a daily streak alive, spend hearts when you 
 and climb a weekly league. Next.js on the front, FastAPI + SQLite on the back, every rule
 enforced on the server.
 
-- **Live demo:** _add your Vercel URL_
-- **API docs (OpenAPI):** _add your Render URL_ + `/docs`
+- **Live demo:** https://duolingo-clone-rho-bice.vercel.app
+- **API docs (OpenAPI):** https://duolingo-clone-w9sh.onrender.com/docs
 - **Repository:** https://github.com/akhil5005/duolingo-clone
 
 | | |
@@ -436,7 +436,7 @@ Environment variables:
 | --- | --- |
 | `PYTHON_VERSION` | `3.11.9` |
 | `DATABASE_URL` | `sqlite:///./duolingo.db` |
-| `CORS_ORIGINS` | `http://localhost:3000` (updated in step 3) |
+| `CORS_ORIGINS` | `https://<app>.vercel.app,http://localhost:3000` |
 | `CORS_ORIGIN_REGEX` | `https://.*\.vercel\.app` |
 | `APP_TIMEZONE` | `Asia/Kolkata` |
 | `HEART_REGEN_MINUTES` | `60` |
