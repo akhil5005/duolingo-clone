@@ -24,6 +24,7 @@ export interface Me {
   daily_goal_xp: number;
   week_activity: boolean[];
   sound_enabled: boolean;
+  debug_tools_enabled: boolean;
   course: CourseBrief | null;
 }
 
@@ -190,4 +191,41 @@ export interface Completion {
   hearts: number;
   new_achievements: UnlockedAchievement[];
   skill: { id: number; state: SkillState; lessons_completed: number; total_lessons: number };
+}
+
+export interface AchievementProgress {
+  code: string;
+  title: string;
+  description: string;
+  icon: string;
+  metric: string;
+  current: number;
+  threshold: number;
+  unlocked_at: string | null;
+}
+
+export interface DailyXp {
+  date: string;
+  xp: number;
+}
+
+export interface Profile {
+  user: {
+    id: number;
+    username: string;
+    display_name: string;
+    avatar_color: string;
+    course: CourseBrief | null;
+  };
+  stats: {
+    streak: number;
+    longest_streak: number;
+    total_xp: number;
+    league: string;
+    top3_finishes: number;
+    lessons_completed: number;
+    joined_at: string;
+  };
+  achievements: AchievementProgress[];
+  xp_last_7_days: DailyXp[];
 }

@@ -5,6 +5,7 @@ from datetime import timedelta
 from sqlalchemy.orm import Session
 
 from app.core import clock
+from app.core.config import get_settings
 from app.models.user import MAX_HEARTS, User
 from app.repositories import content_repo, xp_repo
 from app.schemas.me import CourseBrief, MeOut, MeUpdate
@@ -42,6 +43,7 @@ def build(db: Session, user: User) -> MeOut:
         daily_goal_xp=user.daily_goal_xp,
         week_activity=streak_service.week_activity(active_days, monday),
         sound_enabled=user.sound_enabled,
+        debug_tools_enabled=get_settings().debug_tools_enabled,
         course=(
             CourseBrief(
                 title=course.title,

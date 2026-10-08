@@ -3,6 +3,7 @@
 import clsx from "clsx";
 import { Heart } from "lucide-react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 import { Button3D } from "@/components/ui/Button3D";
 import { Flag } from "@/components/ui/Flag";
@@ -77,6 +78,7 @@ export function GemsPopover({ me }: { me: Me }) {
 }
 
 export function HeartsPopover({ me, onDone }: { me: Me; onDone: () => void }) {
+  const router = useRouter();
   const remaining = useCountdown(me.next_heart_at, me.server_now);
   const refill = useRefillHearts();
   const full = me.hearts >= me.max_hearts;
@@ -118,6 +120,21 @@ export function HeartsPopover({ me, onDone }: { me: Me; onDone: () => void }) {
         <p className="text-xs font-semibold text-danger">
           You need {HEART_REFILL_COST - me.gems} more gems.
         </p>
+      )}
+
+      {!full && (
+        <Button3D
+          variant="primary"
+          size="sm"
+          fullWidth
+          onClick={() => {
+            onDone();
+            // skill 0 means "anything I have started"
+            router.push("/lesson/0?mode=practice&skill=0");
+          }}
+        >
+          Practice to earn hearts
+        </Button3D>
       )}
     </div>
   );

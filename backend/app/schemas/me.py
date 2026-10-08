@@ -33,6 +33,9 @@ class MeOut(BaseModel):
     # Monday-to-Sunday activity flags for the streak calendar popover.
     week_activity: list[bool]
     sound_enabled: bool
+    # Capability flag, not learner data: tells the UI whether to offer the
+    # "simulate next day" and "reset demo" developer tools.
+    debug_tools_enabled: bool
     course: CourseBrief | None
 
 
