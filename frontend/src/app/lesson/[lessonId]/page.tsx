@@ -1,13 +1,32 @@
-import { Mascot } from "@/components/mascot/Mascot";
+"use client";
 
+import { useParams, useSearchParams } from "next/navigation";
+
+import { LessonPlayer } from "@/components/lesson/LessonPlayer";
+import type { SessionMode } from "@/lib/types";
+
+const MODES: SessionMode[] = ["lesson", "practice", "legendary"];
+
+/**
+ * The lesson player runs full screen, outside the (main) shell, so nothing
+ * competes with the exercise. Practice and legendary runs reuse this route with
+ * `?mode=…&skill=…`, because from here on the three modes behave identically.
+ */
 export default function LessonPage() {
+  const params = useParams<{ lessonId: string }>();
+  const search = useSearchParams();
+
+  const requested = search.get("mode");
+  const mode: SessionMode = MODES.includes(requested as SessionMode)
+    ? (requested as SessionMode)
+    : "lesson";
+  const skillId = Number(search.get("skill") ?? 0);
+
   return (
-    <div className="flex min-h-screen flex-col items-center justify-center gap-4 px-6 text-center">
-      <Mascot expression="thinking" size={132} />
-      <h1 className="text-2xl">Getting your lesson ready…</h1>
-      <p className="max-w-sm text-sm font-semibold text-muted">
-        The lesson player is wired up in the next pass.
-      </p>
-    </div>
+    <LessonPlayer
+      mode={mode}
+      lessonId={params.lessonId}
+      skillId={Number.isFinite(skillId) ? skillId : 0}
+    />
   );
 }

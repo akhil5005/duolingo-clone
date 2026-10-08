@@ -76,7 +76,7 @@ def skill_statuses(db: Session, user: User, course: Course) -> dict[int, SkillSt
 
 
 def require_status(db: Session, user: User, skill_id: int) -> SkillStatus:
-    course = _course_for(db, user)
+    course = course_for(db, user)
     statuses = skill_statuses(db, user, course)
     status = statuses.get(skill_id)
     if status is None:
@@ -84,7 +84,7 @@ def require_status(db: Session, user: User, skill_id: int) -> SkillStatus:
     return status
 
 
-def _course_for(db: Session, user: User) -> Course:
+def course_for(db: Session, user: User) -> Course:
     course = content_repo.get_course_tree(db, user.current_course_id) if user.current_course_id else None
     if course is None:
         plain = content_repo.get_course(db)
@@ -95,7 +95,7 @@ def _course_for(db: Session, user: User) -> Course:
 
 
 def build_path(db: Session, user: User) -> PathOut:
-    course = _course_for(db, user)
+    course = course_for(db, user)
     statuses = skill_statuses(db, user, course)
 
     units: list[PathUnitOut] = []
