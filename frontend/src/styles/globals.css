@@ -1,0 +1,62 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Surface tokens as `R G B` triplets so Tailwind can apply opacity modifiers. */
+:root {
+  --page: 255 255 255;
+  --surface: 255 255 255;
+  --raised: 247 247 247;
+  --ink: 75 75 75;
+  --muted: 119 119 119;
+  --line: 229 229 229;
+  --correct: 215 255 184;
+  --wrong: 255 223 224;
+  --locked: 229 229 229;
+  --locked-ink: 175 175 175;
+}
+
+.dark {
+  --page: 19 31 36;
+  --surface: 19 31 36;
+  --raised: 32 47 54;
+  --ink: 241 247 251;
+  --muted: 141 155 163;
+  --line: 55 70 79;
+  --correct: 32 47 54;
+  --wrong: 32 47 54;
+  --locked: 55 70 79;
+  --locked-ink: 141 155 163;
+}
+
+@layer base {
+  html {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  body {
+    @apply bg-page font-sans font-bold text-ink antialiased;
+  }
+
+  /* Duolingo leans on heavy rounded type; 800 is the display weight. */
+  h1,
+  h2,
+  h3 {
+    @apply font-extrabold;
+  }
+
+  :focus-visible {
+    @apply outline-none ring-4 ring-info/40;
+  }
+}
+
+@layer utilities {
+  /* Hides scrollbars on the horizontally scrolling league shield row. */
+  .no-scrollbar {
+    scrollbar-width: none;
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+}
