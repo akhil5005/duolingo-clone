@@ -12,6 +12,12 @@ interface ExerciseRendererProps {
   draft: ExerciseAnswer | null;
   onChange: (answer: ExerciseAnswer | null) => void;
   disabled: boolean;
+  /**
+   * The language being learnt, e.g. "es". Tiles written in it are tagged for
+   * screen readers and spoken aloud when tapped, the way Duolingo pronounces
+   * a word as you pick it. Tiles in English get neither.
+   */
+  courseLang: string;
 }
 
 /**
@@ -25,6 +31,7 @@ export function ExerciseRenderer({
   draft,
   onChange,
   disabled,
+  courseLang,
 }: ExerciseRendererProps) {
   switch (exercise.type) {
     case "multiple_choice":
@@ -34,6 +41,7 @@ export function ExerciseRenderer({
           value={draft && "option_id" in draft ? draft.option_id : null}
           onChange={(optionId) => onChange(optionId ? { option_id: optionId } : null)}
           disabled={disabled}
+          lang={courseLang}
         />
       );
 
@@ -44,6 +52,9 @@ export function ExerciseRenderer({
           payload={exercise.payload}
           onChange={(tokens) => onChange(tokens ? { tokens } : null)}
           disabled={disabled}
+          // Tokens are written in the side being built, which is English on a
+          // "write this in English" exercise. Only speak the language we teach.
+          lang={exercise.payload.target_lang === courseLang ? courseLang : null}
         />
       );
 
@@ -54,6 +65,7 @@ export function ExerciseRenderer({
           value={draft && "pairs" in draft ? (draft.pairs as MatchedPair[]) : []}
           onChange={(pairs) => onChange(pairs.length ? { pairs } : null)}
           disabled={disabled}
+          lang={courseLang}
         />
       );
 
@@ -64,6 +76,7 @@ export function ExerciseRenderer({
           value={draft && "choice" in draft ? draft.choice : null}
           onChange={(choice) => onChange(choice ? { choice } : null)}
           disabled={disabled}
+          lang={courseLang}
         />
       );
 

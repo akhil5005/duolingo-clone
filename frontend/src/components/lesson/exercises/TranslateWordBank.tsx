@@ -5,11 +5,18 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 
 import { useKeyPress, useNumberKeys } from "@/hooks/useKeyboard";
+import { speak } from "@/lib/speech";
 
 interface TranslateWordBankProps {
   payload: { tokens: string[] };
   onChange: (tokens: string[] | null) => void;
   disabled: boolean;
+  /**
+   * The tokens' language, or null when they are English and should not be
+   * spoken - a learner translating *into* English gains nothing from hearing
+   * their own language read back a word at a time.
+   */
+  lang: string | null;
 }
 
 const TILE =
@@ -23,7 +30,7 @@ const TILE =
  * indistinguishable. The component is remounted per exercise, which is what
  * clears the selection between questions.
  */
-export function TranslateWordBank({ payload, onChange, disabled }: TranslateWordBankProps) {
+export function TranslateWordBank({ payload, onChange, disabled, lang }: TranslateWordBankProps) {
   const [picked, setPicked] = useState<number[]>([]);
 
   const commit = (next: number[]) => {
@@ -34,6 +41,8 @@ export function TranslateWordBank({ payload, onChange, disabled }: TranslateWord
   const pick = (index: number) => {
     if (disabled || picked.includes(index)) return;
     commit([...picked, index]);
+    const token = payload.tokens[index];
+    if (lang && token) speak(token, lang);
   };
 
   const drop = (index: number) => {
@@ -78,6 +87,7 @@ export function TranslateWordBank({ payload, onChange, disabled }: TranslateWord
                   type="button"
                   disabled={disabled}
                   onClick={() => drop(index)}
+                  lang={lang ?? undefined}
                   className={TILE}
                 >
                   {payload.tokens[index]}
@@ -105,6 +115,7 @@ export function TranslateWordBank({ payload, onChange, disabled }: TranslateWord
               type="button"
               disabled={disabled}
               onClick={() => pick(index)}
+              lang={lang ?? undefined}
               className={clsx(TILE, "hover:bg-ink/5")}
             >
               {token}

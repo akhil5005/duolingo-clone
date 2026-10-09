@@ -3,39 +3,34 @@
 import { Volume2 } from "lucide-react";
 import { useEffect, useState } from "react";
 
+import { speak, speechSupported } from "@/lib/speech";
+
 interface SpeakerButtonProps {
   text: string;
   lang: string;
 }
 
 /**
- * Reads the prompt aloud with the browser's own speech synthesis.
- *
- * No audio files are shipped, so pronunciation depends on the voices the
- * device happens to have. The button hides itself when the API is missing
+ * Reads the prompt aloud. The button hides itself when the API is missing
  * rather than offering something that would silently do nothing.
+ *
+ * Support is resolved in an effect because the server render cannot know what
+ * the device can do, and a button that appears only after hydration is better
+ * than one that disappears.
  */
 export function SpeakerButton({ text, lang }: SpeakerButtonProps) {
   const [supported, setSupported] = useState(false);
 
   useEffect(() => {
-    setSupported(typeof window !== "undefined" && "speechSynthesis" in window);
+    setSupported(speechSupported());
   }, []);
 
   if (!supported) return null;
 
-  const speak = () => {
-    window.speechSynthesis.cancel();
-    const utterance = new SpeechSynthesisUtterance(text);
-    utterance.lang = lang;
-    utterance.rate = 0.9;
-    window.speechSynthesis.speak(utterance);
-  };
-
   return (
     <button
       type="button"
-      onClick={speak}
+      onClick={() => speak(text, lang)}
       aria-label={`Listen to "${text}"`}
       className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border-2 border-b-4 border-info bg-info text-white transition active:translate-y-[2px] active:border-b-2"
     >

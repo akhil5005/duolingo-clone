@@ -3,6 +3,7 @@
 import clsx from "clsx";
 import { useState } from "react";
 
+import { speak } from "@/lib/speech";
 import type { MatchedPair } from "@/lib/types";
 
 interface MatchPairsProps {
@@ -10,6 +11,8 @@ interface MatchPairsProps {
   value: MatchedPair[];
   onChange: (pairs: MatchedPair[]) => void;
   disabled: boolean;
+  /** The left column's language. The right column is English and stays silent. */
+  lang: string;
 }
 
 const PAIR_COLORS = [
@@ -32,7 +35,7 @@ const TILE =
  * by tapping it again; once all of them are linked the mapping is graded in one
  * go, which is also how the backend scores this type.
  */
-export function MatchPairs({ payload, value, onChange, disabled }: MatchPairsProps) {
+export function MatchPairs({ payload, value, onChange, disabled, lang }: MatchPairsProps) {
   const [pendingLeft, setPendingLeft] = useState<string | null>(null);
 
   const indexOfLeft = (word: string) => value.findIndex((pair) => pair.left === word);
@@ -45,7 +48,12 @@ export function MatchPairs({ payload, value, onChange, disabled }: MatchPairsPro
       onChange(value.filter((_, index) => index !== existing));
       return;
     }
-    setPendingLeft((current) => (current === word ? null : word));
+    // Computed from the rendered value rather than inside a state updater:
+    // updaters must stay pure, and React runs them twice in development.
+    const next = pendingLeft === word ? null : word;
+    setPendingLeft(next);
+    // Speak on selection only: deselecting is a correction, not a question.
+    if (next) speak(word, lang);
   };
 
   const selectRight = (word: string) => {
@@ -81,7 +89,7 @@ export function MatchPairs({ payload, value, onChange, disabled }: MatchPairsPro
               key={word}
               type="button"
               disabled={disabled}
-              lang="es"
+              lang={lang}
               aria-pressed={pairIndex >= 0 || pendingLeft === word}
               onClick={() => selectLeft(word)}
               className={columnTile(word, pairIndex, pendingLeft === word)}

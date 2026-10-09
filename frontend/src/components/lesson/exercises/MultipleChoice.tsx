@@ -3,6 +3,7 @@
 import clsx from "clsx";
 
 import { useNumberKeys } from "@/hooks/useKeyboard";
+import { speak } from "@/lib/speech";
 import type { MCOption } from "@/lib/types";
 
 interface MultipleChoiceProps {
@@ -10,13 +11,26 @@ interface MultipleChoiceProps {
   value: string | null;
   onChange: (optionId: string | null) => void;
   disabled: boolean;
+  /** The language the options are written in; they are read aloud when picked. */
+  lang: string;
 }
 
-export function MultipleChoice({ payload, value, onChange, disabled }: MultipleChoiceProps) {
+export function MultipleChoice({
+  payload,
+  value,
+  onChange,
+  disabled,
+  lang,
+}: MultipleChoiceProps) {
+  const choose = (option: MCOption) => {
+    onChange(option.id);
+    speak(option.text, lang);
+  };
+
   useNumberKeys(
     (index) => {
       const option = payload.options[index];
-      if (option) onChange(option.id);
+      if (option) choose(option);
     },
     { enabled: !disabled, count: payload.options.length },
   );
@@ -32,7 +46,7 @@ export function MultipleChoice({ payload, value, onChange, disabled }: MultipleC
             key={option.id}
             type="button"
             disabled={disabled}
-            onClick={() => onChange(option.id)}
+            onClick={() => choose(option)}
             aria-pressed={selected}
             className={clsx(
               "relative flex items-center gap-3 rounded-2xl border-2 border-b-4 p-4 pb-9 text-left transition",
@@ -48,7 +62,9 @@ export function MultipleChoice({ payload, value, onChange, disabled }: MultipleC
                 {option.emoji}
               </span>
             )}
-            <span className="text-base">{option.text}</span>
+            <span lang={lang} className="text-base">
+              {option.text}
+            </span>
             <span
               aria-hidden
               className={clsx(

@@ -188,6 +188,7 @@ export function LessonPlayer({ mode, lessonId, skillId }: LessonPlayerProps) {
               draft={draft}
               onChange={setDraft}
               disabled={phase !== "answering"}
+              courseLang={me?.course?.language_code ?? "es"}
             />
           </>
         )}
