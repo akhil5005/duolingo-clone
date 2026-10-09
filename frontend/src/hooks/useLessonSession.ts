@@ -53,7 +53,8 @@ type Action =
   | { type: "next" }
   | { type: "finishing" }
   | { type: "finished"; summary: Completion }
-  | { type: "failed"; message: string; code: string };
+  | { type: "failed"; message: string; code: string }
+  | { type: "reset" };
 
 const INITIAL: State = {
   phase: "loading",
@@ -113,6 +114,8 @@ function reducer(state: State, action: Action): State {
       return { ...state, phase: "done", summary: action.summary, hearts: action.summary.hearts };
     case "failed":
       return { ...state, error: action.message, errorCode: action.code };
+    case "reset":
+      return INITIAL;
     default:
       return state;
   }
@@ -129,6 +132,12 @@ interface UseLessonSessionOptions {
   lessonId: string;
   skillId: number;
   soundEnabled: boolean;
+  /**
+   * Bumped to ask for a brand new session, which is what a gem refill needs:
+   * the server has already marked the old one failed, so there is nothing to
+   * resume and the player has to deal a fresh hand.
+   */
+  attempt?: number;
 }
 
 export function useLessonSession({
@@ -136,15 +145,17 @@ export function useLessonSession({
   lessonId,
   skillId,
   soundEnabled,
+  attempt = 0,
 }: UseLessonSessionOptions) {
   const [state, dispatch] = useReducer(reducer, INITIAL);
   const queryClient = useQueryClient();
-  const hasStarted = useRef(false);
+  const startedAttempt = useRef<number | null>(null);
 
   useEffect(() => {
-    if (hasStarted.current) return;
-    hasStarted.current = true;
+    if (startedAttempt.current === attempt) return;
+    startedAttempt.current = attempt;
 
+    dispatch({ type: "reset" });
     apiPost<LessonSession>(startPath(mode, lessonId, skillId))
       .then((session) => dispatch({ type: "started", session }))
       .catch((error: unknown) =>
@@ -154,7 +165,7 @@ export function useLessonSession({
           code: error instanceof ApiError ? error.code : "UNKNOWN",
         }),
       );
-  }, [mode, lessonId, skillId]);
+  }, [mode, lessonId, skillId, attempt]);
 
   const exercisesById = useMemo(
     () =>

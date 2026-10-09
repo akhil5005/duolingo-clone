@@ -9,7 +9,18 @@ import { useMe, useRefillHearts } from "@/hooks/useMe";
 
 const HEART_REFILL_COST = 350;
 
-export function OutOfHeartsModal({ open, skillId }: { open: boolean; skillId: number }) {
+interface OutOfHeartsModalProps {
+  open: boolean;
+  skillId: number;
+  /**
+   * Runs once the gems have actually bought hearts. The server has already
+   * marked the old session failed, so the owner restarts the lesson rather
+   * than leaving the learner staring at a modal they just paid to dismiss.
+   */
+  onRefilled?: () => void;
+}
+
+export function OutOfHeartsModal({ open, skillId, onRefilled }: OutOfHeartsModalProps) {
   const router = useRouter();
   const { data: me } = useMe();
   const refill = useRefillHearts();
@@ -29,7 +40,11 @@ export function OutOfHeartsModal({ open, skillId }: { open: boolean; skillId: nu
           size="lg"
           fullWidth
           disabled={!affordable || refill.isPending}
-          onClick={() => refill.mutate(undefined, { onSuccess: () => router.refresh() })}
+          onClick={() =>
+            refill.mutate(undefined, {
+              onSuccess: () => (onRefilled ? onRefilled() : router.refresh()),
+            })
+          }
         >
           Refill for {HEART_REFILL_COST} gems
         </Button3D>

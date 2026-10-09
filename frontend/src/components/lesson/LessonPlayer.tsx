@@ -57,6 +57,7 @@ export function LessonPlayer({ mode, lessonId, skillId }: LessonPlayerProps) {
   const [quitOpen, setQuitOpen] = useState(false);
   const [outOfHearts, setOutOfHearts] = useState(false);
   const [showStreak, setShowStreak] = useState(false);
+  const [attempt, setAttempt] = useState(0);
   const celebrated = useRef(false);
 
   const lesson = useLessonSession({
@@ -64,7 +65,15 @@ export function LessonPlayer({ mode, lessonId, skillId }: LessonPlayerProps) {
     lessonId,
     skillId,
     soundEnabled: me?.sound_enabled ?? true,
+    attempt,
   });
+
+  /** Refilled hearts are only worth anything if the lesson actually resumes. */
+  const restartAfterRefill = () => {
+    celebrated.current = false;
+    setOutOfHearts(false);
+    setAttempt((current) => current + 1);
+  };
 
   const { current, draft, phase, feedback, summary, check, submit, advance, setDraft } = lesson;
   const ready = current ? isAnswerReady(current, draft) : false;
@@ -117,7 +126,7 @@ export function LessonPlayer({ mode, lessonId, skillId }: LessonPlayerProps) {
   if (lesson.error && !lesson.session) {
     const noHearts = lesson.errorCode === "NO_HEARTS";
     return noHearts ? (
-      <OutOfHeartsModal open skillId={skillId} />
+      <OutOfHeartsModal open skillId={skillId} onRefilled={restartAfterRefill} />
     ) : (
       <FailedScreen title="We could not start this lesson" description={lesson.error} onLeave={leave} />
     );
@@ -191,7 +200,11 @@ export function LessonPlayer({ mode, lessonId, skillId }: LessonPlayerProps) {
       />
 
       <QuitModal open={quitOpen} onStay={() => setQuitOpen(false)} onQuit={() => void quit()} />
-      <OutOfHeartsModal open={outOfHearts} skillId={lesson.session.skill_id} />
+      <OutOfHeartsModal
+        open={outOfHearts}
+        skillId={lesson.session.skill_id}
+        onRefilled={restartAfterRefill}
+      />
     </div>
   );
 }
