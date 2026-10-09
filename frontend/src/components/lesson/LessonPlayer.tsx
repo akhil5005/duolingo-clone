@@ -68,8 +68,12 @@ export function LessonPlayer({ mode, lessonId, skillId }: LessonPlayerProps) {
     attempt,
   });
 
-  /** Refilled hearts are only worth anything if the lesson actually resumes. */
-  const restartAfterRefill = () => {
+  /**
+   * Deal a fresh session for the same lesson. Both callers reach here with the
+   * old session already failed server-side: a gem refill (which is only worth
+   * anything if the lesson actually resumes) and a legendary retry.
+   */
+  const restartLesson = () => {
     celebrated.current = false;
     setOutOfHearts(false);
     setAttempt((current) => current + 1);
@@ -126,7 +130,7 @@ export function LessonPlayer({ mode, lessonId, skillId }: LessonPlayerProps) {
   if (lesson.error && !lesson.session) {
     const noHearts = lesson.errorCode === "NO_HEARTS";
     return noHearts ? (
-      <OutOfHeartsModal open skillId={skillId} onRefilled={restartAfterRefill} />
+      <OutOfHeartsModal open skillId={skillId} onRefilled={restartLesson} />
     ) : (
       <FailedScreen title="We could not start this lesson" description={lesson.error} onLeave={leave} />
     );
@@ -146,7 +150,7 @@ export function LessonPlayer({ mode, lessonId, skillId }: LessonPlayerProps) {
       <FailedScreen
         title="Legendary attempt over"
         description="A legendary challenge ends on the first mistake. Give it another go whenever you are ready."
-        onRetry={() => router.refresh()}
+        onRetry={restartLesson}
         onLeave={leave}
       />
     );
@@ -203,7 +207,7 @@ export function LessonPlayer({ mode, lessonId, skillId }: LessonPlayerProps) {
       <OutOfHeartsModal
         open={outOfHearts}
         skillId={lesson.session.skill_id}
-        onRefilled={restartAfterRefill}
+        onRefilled={restartLesson}
       />
     </div>
   );
