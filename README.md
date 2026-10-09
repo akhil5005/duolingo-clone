@@ -48,7 +48,10 @@ front, FastAPI + SQLite on the back, every rule enforced on the server.
 
 - **Two full courses** — Spanish and French, 120 exercises each, with a course switcher in the
   header. Progress is tracked per course; XP, hearts, gems and the streak follow the learner.
-- Text-to-speech on Spanish and French prompts (browser speech synthesis — no audio files shipped)
+- Text-to-speech throughout: the prompt has a speaker button, and tapping a word in a multiple
+  choice, word bank, match-pairs or fill-in-the-blank reads it aloud the way Duolingo does.
+  Browser speech synthesis, so no audio files are shipped and voice quality varies by device.
+- A unit guidebook: key phrases with translations and audio, plus a grammar note per unit
 - Eight achievements with live progress bars
 - A real leaderboard computed from the XP ledger across 15 seeded learners
 - Legendary challenge mode (15 exercises, one mistake ends it)
@@ -57,8 +60,8 @@ front, FastAPI + SQLite on the back, every rule enforced on the server.
 
 ### Deliberately mocked (marked "Coming soon" in the UI)
 
-Speech recognition, in-app purchases and Super, friends and social features. Authentication is
-simplified to a single default learner.
+Speech recognition, in-app purchases and Super, friends and social features, notifications and
+privacy settings. Authentication is simplified to a single default learner.
 
 ## Tech stack
 
@@ -252,7 +255,7 @@ erDiagram
 
 | Table | What it is for |
 | --- | --- |
-| `courses` → `units` → `skills` → `lessons` → `exercises` | Immutable content, written only by the seeder. Each level is unique on `(parent_id, order_index)`, which is what makes the path deterministic. |
+| `courses` → `units` → `skills` → `lessons` → `exercises` | Immutable content, written only by the seeder. Each level is unique on `(parent_id, order_index)`, which is what makes the path deterministic. `units.grammar_note` and `skills.vocabulary` (JSON) hold the guidebook's material. |
 | `users` | One row per learner. `is_default_learner` marks the one this build logs in as. |
 | `user_skill_progress` | Composite key `(user_id, skill_id)`. Stores a counter and two timestamps — nothing about locking. |
 | `lesson_sessions` | A session in flight: the remaining queue, what has been answered correctly, mistakes, mode and status. |
@@ -295,6 +298,7 @@ Interactive docs at `/docs` on the backend host.
 | `POST` | `/api/me/hearts/refill` | Buy a full set of hearts for 350 gems (`402` if short) |
 | `GET` | `/api/path` | The current course with derived skill states and the next lesson id |
 | `GET` | `/api/courses` | The catalogue, with per-course skill progress and which one is active |
+| `GET` | `/api/guidebook` | Key phrases and grammar notes for the current course, unit by unit |
 | `POST` | `/api/lessons/{lesson_id}/sessions` | Start a lesson (`409` if locked or out of hearts) |
 | `POST` | `/api/skills/{skill_id}/practice` | Practice run; `skill_id = 0` means "anything I have started" |
 | `POST` | `/api/skills/{skill_id}/legendary` | Legendary challenge over a finished skill |
