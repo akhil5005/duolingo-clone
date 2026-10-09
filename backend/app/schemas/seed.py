@@ -37,12 +37,23 @@ class LessonSeed(BaseModel):
     exercises: list[ExerciseSeed] = Field(min_length=1)
 
 
+class VocabularySeed(BaseModel):
+    """One word the skill teaches, before it is ever tested."""
+
+    model_config = ConfigDict(extra="forbid")
+
+    term: str
+    translation: str
+    emoji: str | None = None
+
+
 class SkillSeed(BaseModel):
     model_config = ConfigDict(extra="forbid")
 
     order_index: int = Field(ge=1)
     title: str
     icon: str
+    vocabulary: list[VocabularySeed] = Field(default_factory=list)
     lessons: list[LessonSeed] = Field(min_length=1)
 
 
@@ -53,6 +64,7 @@ class UnitSeed(BaseModel):
     title: str
     description: str
     color_hex: str = Field(pattern=r"^#[0-9A-Fa-f]{6}$")
+    grammar_note: str | None = None
     skills: list[SkillSeed] = Field(min_length=1)
 
 

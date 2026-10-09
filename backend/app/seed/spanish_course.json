@@ -532,6 +532,38 @@
                 }
               ]
             }
+          ],
+          "vocabulary": [
+            {
+              "term": "hola",
+              "translation": "hello",
+              "emoji": "👋"
+            },
+            {
+              "term": "adiós",
+              "translation": "goodbye",
+              "emoji": "🚶"
+            },
+            {
+              "term": "gracias",
+              "translation": "thank you",
+              "emoji": "😊"
+            },
+            {
+              "term": "por favor",
+              "translation": "please",
+              "emoji": "🙏"
+            },
+            {
+              "term": "sí",
+              "translation": "yes",
+              "emoji": "✅"
+            },
+            {
+              "term": "no",
+              "translation": "no",
+              "emoji": "❌"
+            }
           ]
         },
         {
@@ -1054,6 +1086,38 @@
                   "tts_lang": null
                 }
               ]
+            }
+          ],
+          "vocabulary": [
+            {
+              "term": "el agua",
+              "translation": "the water",
+              "emoji": "💧"
+            },
+            {
+              "term": "el pan",
+              "translation": "the bread",
+              "emoji": "🍞"
+            },
+            {
+              "term": "la leche",
+              "translation": "the milk",
+              "emoji": "🥛"
+            },
+            {
+              "term": "la manzana",
+              "translation": "the apple",
+              "emoji": "🍎"
+            },
+            {
+              "term": "comer",
+              "translation": "to eat",
+              "emoji": "🍽️"
+            },
+            {
+              "term": "beber",
+              "translation": "to drink",
+              "emoji": "🥤"
             }
           ]
         },
@@ -1581,9 +1645,37 @@
                 }
               ]
             }
+          ],
+          "vocabulary": [
+            {
+              "term": "la madre",
+              "translation": "the mother",
+              "emoji": "👩"
+            },
+            {
+              "term": "el padre",
+              "translation": "the father",
+              "emoji": "👨"
+            },
+            {
+              "term": "el hermano",
+              "translation": "the brother",
+              "emoji": "👦"
+            },
+            {
+              "term": "la hermana",
+              "translation": "the sister",
+              "emoji": "👧"
+            },
+            {
+              "term": "la familia",
+              "translation": "the family",
+              "emoji": "👪"
+            }
           ]
         }
-      ]
+      ],
+      "grammar_note": "Every Spanish noun has a gender. Masculine nouns take el, feminine nouns take la. Most nouns ending in -o are masculine and most ending in -a are feminine, so the article changes while the noun stays put: el niño, la niña."
     },
     {
       "order_index": 2,
@@ -2116,6 +2208,28 @@
                 }
               ]
             }
+          ],
+          "vocabulary": [
+            {
+              "term": "el hotel",
+              "translation": "the hotel",
+              "emoji": "🏨"
+            },
+            {
+              "term": "el tren",
+              "translation": "the train",
+              "emoji": "🚆"
+            },
+            {
+              "term": "el aeropuerto",
+              "translation": "the airport",
+              "emoji": "✈️"
+            },
+            {
+              "term": "la ciudad",
+              "translation": "the city",
+              "emoji": "🏙️"
+            }
           ]
         },
         {
@@ -2641,6 +2755,33 @@
                   "tts_lang": null
                 }
               ]
+            }
+          ],
+          "vocabulary": [
+            {
+              "term": "rojo",
+              "translation": "red",
+              "emoji": "🔴"
+            },
+            {
+              "term": "azul",
+              "translation": "blue",
+              "emoji": "🔵"
+            },
+            {
+              "term": "verde",
+              "translation": "green",
+              "emoji": "🟢"
+            },
+            {
+              "term": "la camisa",
+              "translation": "the shirt",
+              "emoji": "👕"
+            },
+            {
+              "term": "los zapatos",
+              "translation": "the shoes",
+              "emoji": "👟"
             }
           ]
         },
@@ -3172,9 +3313,32 @@
                 }
               ]
             }
+          ],
+          "vocabulary": [
+            {
+              "term": "el perro",
+              "translation": "the dog",
+              "emoji": "🐶"
+            },
+            {
+              "term": "el gato",
+              "translation": "the cat",
+              "emoji": "🐱"
+            },
+            {
+              "term": "el pájaro",
+              "translation": "the bird",
+              "emoji": "🐦"
+            },
+            {
+              "term": "el caballo",
+              "translation": "the horse",
+              "emoji": "🐴"
+            }
           ]
         }
-      ]
+      ],
+      "grammar_note": "Adjectives come after the noun in Spanish and agree with it. A masculine noun takes -o, a feminine one takes -a, and plurals add -s: el tren rojo, la camisa roja, los zapatos azules."
     }
   ]
 }

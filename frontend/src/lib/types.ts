@@ -95,6 +95,35 @@ export interface Leaderboard {
   rows: LeaderboardRow[];
 }
 
+export interface Vocabulary {
+  term: string;
+  translation: string;
+  emoji: string | null;
+}
+
+export interface GuidebookSkill {
+  id: number;
+  title: string;
+  icon: string;
+  vocabulary: Vocabulary[];
+}
+
+export interface GuidebookUnit {
+  id: number;
+  order_index: number;
+  title: string;
+  description: string;
+  color_hex: string;
+  grammar_note: string | null;
+  skills: GuidebookSkill[];
+}
+
+export interface Guidebook {
+  course_title: string;
+  language_code: string;
+  units: GuidebookUnit[];
+}
+
 export type ExerciseType =
   | "multiple_choice"
   | "translate"

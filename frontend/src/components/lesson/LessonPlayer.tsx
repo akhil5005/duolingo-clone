@@ -79,6 +79,7 @@ export function LessonPlayer({ mode, lessonId, skillId }: LessonPlayerProps) {
     setAttempt((current) => current + 1);
   };
 
+  const courseLang = me?.course?.language_code ?? "es";
   const { current, draft, phase, feedback, summary, check, submit, advance, setDraft } = lesson;
   const ready = current ? isAnswerReady(current, draft) : false;
   const isLastExercise = lesson.queue.length === 0;
@@ -188,7 +189,7 @@ export function LessonPlayer({ mode, lessonId, skillId }: LessonPlayerProps) {
               draft={draft}
               onChange={setDraft}
               disabled={phase !== "answering"}
-              courseLang={me?.course?.language_code ?? "es"}
+              courseLang={courseLang}
             />
           </>
         )}

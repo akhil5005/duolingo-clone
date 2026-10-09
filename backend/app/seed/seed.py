@@ -65,6 +65,7 @@ def _upsert_unit(db: Session, course: Course, seed: UnitSeed) -> Unit:
         unit = Unit(course_id=course.id, order_index=seed.order_index)
         db.add(unit)
     unit.title, unit.description, unit.color_hex = seed.title, seed.description, seed.color_hex
+    unit.grammar_note = seed.grammar_note
     db.flush()
     return unit
 
@@ -77,6 +78,7 @@ def _upsert_skill(db: Session, unit: Unit, seed: SkillSeed) -> Skill:
         skill = Skill(unit_id=unit.id, order_index=seed.order_index)
         db.add(skill)
     skill.title, skill.icon = seed.title, seed.icon
+    skill.vocabulary = [v.model_dump() for v in seed.vocabulary]
     db.flush()
     return skill
 

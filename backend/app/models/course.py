@@ -44,6 +44,8 @@ class Unit(Base):
     title: Mapped[str] = mapped_column(String(120))
     description: Mapped[str] = mapped_column(String(240))
     color_hex: Mapped[str] = mapped_column(String(9))
+    # One short note on the pattern this unit drills, shown in the guidebook.
+    grammar_note: Mapped[str | None] = mapped_column(Text, nullable=True)
 
     course: Mapped[Course] = relationship(back_populates="units")
     skills: Mapped[list["Skill"]] = relationship(
@@ -62,6 +64,10 @@ class Skill(Base):
     order_index: Mapped[int] = mapped_column(Integer)
     title: Mapped[str] = mapped_column(String(120))
     icon: Mapped[str] = mapped_column(String(40))
+    # The words this skill teaches: [{term, translation, emoji}]. Feeds both the
+    # unit guidebook and the no-stakes intro shown before the first lesson, so
+    # the two can never drift apart.
+    vocabulary: Mapped[list[dict[str, Any]]] = mapped_column(JSON, default=list)
 
     unit: Mapped[Unit] = relationship(back_populates="skills")
     lessons: Mapped[list["Lesson"]] = relationship(

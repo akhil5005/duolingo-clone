@@ -2,6 +2,7 @@
 
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 
+import { GUIDEBOOK_KEY } from "@/hooks/useGuidebook";
 import { LEADERBOARD_KEY } from "@/hooks/useLeaderboard";
 import { ME_KEY } from "@/hooks/useMe";
 import { PATH_KEY } from "@/hooks/usePath";
@@ -29,7 +30,7 @@ export function useSwitchCourse() {
       apiPatch<Me>("/api/me", { current_course_id: courseId }),
     onSuccess: (me) => {
       queryClient.setQueryData(ME_KEY, me);
-      for (const key of [PATH_KEY, COURSES_KEY, PROFILE_KEY, LEADERBOARD_KEY]) {
+      for (const key of [PATH_KEY, COURSES_KEY, PROFILE_KEY, LEADERBOARD_KEY, GUIDEBOOK_KEY]) {
         void queryClient.invalidateQueries({ queryKey: key });
       }
     },

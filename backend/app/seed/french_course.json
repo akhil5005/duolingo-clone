@@ -532,6 +532,38 @@
                 }
               ]
             }
+          ],
+          "vocabulary": [
+            {
+              "term": "bonjour",
+              "translation": "hello",
+              "emoji": "👋"
+            },
+            {
+              "term": "au revoir",
+              "translation": "goodbye",
+              "emoji": "🚶"
+            },
+            {
+              "term": "merci",
+              "translation": "thank you",
+              "emoji": "😊"
+            },
+            {
+              "term": "s'il vous plaît",
+              "translation": "please",
+              "emoji": "🙏"
+            },
+            {
+              "term": "oui",
+              "translation": "yes",
+              "emoji": "✅"
+            },
+            {
+              "term": "non",
+              "translation": "no",
+              "emoji": "❌"
+            }
           ]
         },
         {
@@ -1056,6 +1088,38 @@
                   "tts_lang": null
                 }
               ]
+            }
+          ],
+          "vocabulary": [
+            {
+              "term": "l'eau",
+              "translation": "the water",
+              "emoji": "💧"
+            },
+            {
+              "term": "le pain",
+              "translation": "the bread",
+              "emoji": "🍞"
+            },
+            {
+              "term": "le lait",
+              "translation": "the milk",
+              "emoji": "🥛"
+            },
+            {
+              "term": "la pomme",
+              "translation": "the apple",
+              "emoji": "🍎"
+            },
+            {
+              "term": "manger",
+              "translation": "to eat",
+              "emoji": "🍽️"
+            },
+            {
+              "term": "boire",
+              "translation": "to drink",
+              "emoji": "🥤"
             }
           ]
         },
@@ -1587,9 +1651,37 @@
                 }
               ]
             }
+          ],
+          "vocabulary": [
+            {
+              "term": "la mère",
+              "translation": "the mother",
+              "emoji": "👩"
+            },
+            {
+              "term": "le père",
+              "translation": "the father",
+              "emoji": "👨"
+            },
+            {
+              "term": "le frère",
+              "translation": "the brother",
+              "emoji": "👦"
+            },
+            {
+              "term": "la sœur",
+              "translation": "the sister",
+              "emoji": "👧"
+            },
+            {
+              "term": "la famille",
+              "translation": "the family",
+              "emoji": "👪"
+            }
           ]
         }
-      ]
+      ],
+      "grammar_note": "Every French noun has a gender. Masculine nouns take le, feminine nouns take la, and both shrink to l' in front of a vowel sound: le pain, la pomme, l'eau. There is no reliable ending to go by, so learn each noun with its article."
     },
     {
       "order_index": 2,
@@ -2118,6 +2210,28 @@
                 }
               ]
             }
+          ],
+          "vocabulary": [
+            {
+              "term": "l'hôtel",
+              "translation": "the hotel",
+              "emoji": "🏨"
+            },
+            {
+              "term": "le train",
+              "translation": "the train",
+              "emoji": "🚆"
+            },
+            {
+              "term": "l'aéroport",
+              "translation": "the airport",
+              "emoji": "✈️"
+            },
+            {
+              "term": "la ville",
+              "translation": "the city",
+              "emoji": "🏙️"
+            }
           ]
         },
         {
@@ -2643,6 +2757,33 @@
                   "tts_lang": null
                 }
               ]
+            }
+          ],
+          "vocabulary": [
+            {
+              "term": "rouge",
+              "translation": "red",
+              "emoji": "🔴"
+            },
+            {
+              "term": "bleu",
+              "translation": "blue",
+              "emoji": "🔵"
+            },
+            {
+              "term": "vert",
+              "translation": "green",
+              "emoji": "🟢"
+            },
+            {
+              "term": "la chemise",
+              "translation": "the shirt",
+              "emoji": "👕"
+            },
+            {
+              "term": "les chaussures",
+              "translation": "the shoes",
+              "emoji": "👟"
             }
           ]
         },
@@ -3174,9 +3315,32 @@
                 }
               ]
             }
+          ],
+          "vocabulary": [
+            {
+              "term": "le chien",
+              "translation": "the dog",
+              "emoji": "🐶"
+            },
+            {
+              "term": "le chat",
+              "translation": "the cat",
+              "emoji": "🐱"
+            },
+            {
+              "term": "l'oiseau",
+              "translation": "the bird",
+              "emoji": "🐦"
+            },
+            {
+              "term": "le cheval",
+              "translation": "the horse",
+              "emoji": "🐴"
+            }
           ]
         }
-      ]
+      ],
+      "grammar_note": "Most French adjectives follow the noun and agree with it. Feminine adds -e, plural adds -s: le train rouge, la pomme verte, les chaussures bleues."
     }
   ]
 }
